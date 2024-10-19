@@ -1,0 +1,1021 @@
+name,latitude,longitude,phase,country
+Socotra Island,12.4634,53.823,Exploration,Yemen
+Raja Ampat Islands,-0.2346,130.517,Exploration,Indonesia
+Svalbard,78.2232,15.6469,Exploration,Norway
+Tuvalu,-7.1095,177.6493,Exploration,Tuvalu
+Faroe Islands,62,-6.79,Exploration,Denmark
+Madagascar,-18.7669,46.8691,Exploration,Madagascar
+Kamchatka Peninsula,56,160,Exploration,Russia
+Antarctica,-82.8628,135,Exploration,Antarctica
+Galapagos Islands,-0.9538,-90.9656,Exploration,Ecuador
+Bhutan,27.5142,90.4336,Exploration,Bhutan
+Namibia Desert,-24.6036,15.29,Exploration,Namibia
+Papua New Guinea,-6.3149,143.9555,Exploration,Papua New Guinea
+Patagonia,-49.3315,-72.8866,Exploration,Argentina/Chile
+Yukon,64.2823,-135,Exploration,Canada
+Chad,15.4542,18.7322,Exploration,Chad
+Solomon Islands,-9.6457,160.1562,Exploration,Solomon Islands
+Guyana,4.8604,-58.9302,Exploration,Guyana
+Kyrgyzstan,41.2044,74.7661,Exploration,Kyrgyzstan
+Sao Tome and Principe,0.1864,6.6131,Exploration,S�o Tom� and Pr�ncipe
+Comoros,-11.875,43.8722,Exploration,Comoros
+Vanuatu,-15.3767,166.9592,Exploration,Vanuatu
+Timor-Leste,-8.8742,125.7275,Exploration,Timor-Leste
+Djibouti,11.8251,42.5903,Exploration,Djibouti
+Gabon,-0.8037,11.6094,Exploration,Gabon
+Suriname,3.9193,-56.0278,Exploration,Suriname
+Equatorial Guinea,1.6508,10.2679,Exploration,Equatorial Guinea
+Turkmenistan,38.9697,59.5563,Exploration,Turkmenistan
+Tajikistan,38.861,71.2761,Exploration,Tajikistan
+Nauru,-0.5228,166.9315,Exploration,Nauru
+Kiribati,1.8709,-157.3625,Exploration,Kiribati
+Marshall Islands,7.1315,171.1845,Exploration,Marshall Islands
+Palau,7.5149,134.5825,Exploration,Palau
+Federated States of Micronesia,7.4256,150.5508,Exploration,Micronesia
+Montserrat,16.7425,-62.1874,Exploration,Montserrat
+Saint Helena,-15.965,-5.7089,Exploration,Saint Helena
+Niue,-19.0544,-169.8672,Exploration,Niue
+Tokelau,-9.1667,-171.8333,Exploration,Tokelau
+Pitcairn Islands,-24.3763,-128.3242,Exploration,Pitcairn Islands
+Tristan da Cunha,-37.1052,-12.2777,Exploration,Tristan da Cunha
+Society Islands,-16.5,-151.75,Exploration,French Polynesia
+Melanesia,-9.5,159.5,Exploration,Multiple Countries
+Kerguelen Islands,-49.2804,69.3486,Exploration,French Southern Territories
+Jan Mayen,71,-8,Exploration,Norway
+Franz Josef Land,80,60,Exploration,Russia
+Wrangel Island,71.247,-179.178,Exploration,Russia
+Easter Island,-27.1127,-109.3497,Exploration,Chile
+Kingdom of Mustang,29.2,83.9333,Exploration,Nepal
+Lake Baikal,53.5587,108.165,Exploration,Russia
+Atacama Desert,-24,-69,Exploration,Chile
+Gobi Desert,42.5,103.5,Exploration,Mongolia/China
+Kerguelen Plateau,-50,68,Exploration,Southern Indian Ocean
+Chatham Islands,-43.9509,-176.5597,Exploration,New Zealand
+Lord Howe Island,-31.558,159.082,Exploration,Australia
+Socotra Archipelago,12.3695,53.8969,Exploration,Yemen
+Bazaruto Archipelago,-21.635,35.4714,Exploration,Mozambique
+Loango National Park,-2.33,9.585,Exploration,Gabon
+Omo Valley,5.3333,36.5,Exploration,Ethiopia
+Danakil Depression,14.2417,40.3,Exploration,Ethiopia
+Gilf Kebir,23,25,Exploration,Egypt
+Kaziranga National Park,26.5775,93.1711,Exploration,India
+Hornstrandir Nature Reserve,66.3333,-22.3333,Exploration,Iceland
+Skeleton Coast,-19,12.5,Exploration,Namibia
+Makgadikgadi Pans,-20.5667,25.8333,Exploration,Botswana
+Kaokoland,-18,13.5,Exploration,Namibia
+Rwenzori Mountains,0.3792,29.8768,Exploration,Uganda
+Simien Mountains,13.1833,38.0667,Exploration,Ethiopia
+Tsingy de Bemaraha,-18.6667,44.7167,Exploration,Madagascar
+Bungle Bungle Range,-17.4845,128.4977,Exploration,Australia
+Daintree Rainforest,-16.1718,145.4185,Exploration,Australia
+Fraser Island,-25.214,153.1325,Exploration,Australia
+Lake Turkana,3.3704,36.1106,Exploration,Kenya
+Kavango Zambezi,-17.8575,24.2699,Exploration,Multiple Countries
+Chefchaouen,35.1718,-5.2697,Involvement,Morocco
+Sapa,22.34,103.84,Involvement,Vietnam
+Lake Inle,20.5666,96.9166,Involvement,Myanmar
+Colca Canyon,-15.6333,-71.8333,Involvement,Peru
+Jaisalmer,26.9157,70.9083,Involvement,India
+Tofo Beach,-23.855,35.5342,Involvement,Mozambique
+Salento,4.637,-75.57,Involvement,Colombia
+Lamu Island,-2.2717,40.902,Involvement,Kenya
+Phongsali,21.6833,102.1,Involvement,Laos
+Goris,39.5122,46.3387,Involvement,Armenia
+Matsumoto,36.2381,137.9718,Involvement,Japan
+Jaffna,9.6615,80.0255,Involvement,Sri Lanka
+Tofo,-23.855,35.5342,Involvement,Mozambique
+Luang Namtha,20.95,101.4,Involvement,Laos
+Pushkar,26.489,74.551,Involvement,India
+Isla Holbox,21.5218,-87.3816,Involvement,Mexico
+Pai,19.358,98.4367,Involvement,Thailand
+Kotor,42.4247,18.7712,Involvement,Montenegro
+Kpalim�,6.9,0.6333,Involvement,Togo
+Tobago,11.2333,-60.6667,Involvement,Trinidad and Tobago
+Sumba Island,-9.6433,119.6536,Involvement,Indonesia
+Bandipur,27.9319,84.4162,Involvement,Nepal
+Bukit Lawang,3.534,98.139,Involvement,Indonesia
+Uplistsikhe,41.9683,44.2033,Involvement,Georgia
+Ba�os,-1.3965,-78.4247,Involvement,Ecuador
+San Blas Islands,9.57,-78.82,Involvement,Panama
+Fianarantsoa,-21.4333,47.0833,Involvement,Madagascar
+Mae Hong Son,19.301,97.9685,Involvement,Thailand
+Battambang,13.0957,103.2022,Involvement,Cambodia
+Uyuni,-20.4603,-66.826,Involvement,Bolivia
+Semuc Champey,15.5333,-89.9667,Involvement,Guatemala
+Coron,-11.9983,120.2,Involvement,Philippines
+Flores,8.64,121.7,Involvement,Indonesia
+Lake Bled,46.3683,14.1146,Involvement,Slovenia
+Valparaiso,-33.0472,-71.6127,Involvement,Chile
+Mostar,43.3438,17.8078,Involvement,Bosnia and Herzegovina
+San Cristobal de las Casas,16.737,-92.6376,Involvement,Mexico
+Chefchaouen,35.1718,-5.2697,Involvement,Morocco
+Lijiang,26.8721,100.2255,Involvement,China
+El Nido,11.1797,119.3915,Involvement,Philippines
+Arequipa,-16.409,-71.5375,Involvement,Peru
+Huacachina,-14.09,-75.7622,Involvement,Peru
+Pokhara,28.2096,83.9856,Involvement,Nepal
+Sihanoukville,10.6253,103.5234,Involvement,Cambodia
+Rishikesh,30.0869,78.2676,Involvement,India
+Huaraz,-9.5278,-77.5278,Involvement,Peru
+Antigua Guatemala,14.556,-90.733,Involvement,Guatemala
+Paracas,-13.854,-76.265,Involvement,Peru
+Bocas del Toro,9.3359,-82.2475,Involvement,Panama
+Mui Ne,10.9333,108.2833,Involvement,Vietnam
+Kep,10.4833,104.3167,Involvement,Cambodia
+Vang Vieng,18.9333,102.45,Involvement,Laos
+Ninh Binh,20.2534,105.974,Involvement,Vietnam
+Kep,10.4833,104.3167,Involvement,Cambodia
+Bagan,21.1717,94.8585,Involvement,Myanmar
+Hampi,15.335,76.462,Involvement,India
+Si Phan Don,14.082,105.836,Involvement,Laos
+Mawlamyine,16.4905,97.6289,Involvement,Myanmar
+Dalat,11.9416,108.4383,Involvement,Vietnam
+Minsk,53.9006,27.559,Involvement,Belarus
+Kigali,-1.9441,30.0619,Involvement,Rwanda
+Essaouira,31.5085,-9.7595,Involvement,Morocco
+Tam Coc,20.2511,105.9574,Involvement,Vietnam
+Pushkar,26.489,74.551,Involvement,India
+Otavalo,0.2333,-78.2667,Involvement,Ecuador
+Varkala,8.7379,76.7116,Involvement,India
+Dahab,28.5,34.5167,Involvement,Egypt
+Da Nang,16.0544,108.2022,Development,Vietnam
+Phu Quoc Island,10.289,103.984,Development,Vietnam
+Zanzibar,-6.1659,39.198,Development,Tanzania
+Krakow,50.0647,19.945,Development,Poland
+Cape Verde,16.5388,-23.0418,Development,Cape Verde
+Siem Reap,13.3633,103.8564,Development,Cambodia
+Hoi An,15.8801,108.338,Development,Vietnam
+Palawan,9.8432,118.7386,Development,Philippines
+Dubrovnik,42.6507,18.0944,Development,Croatia
+Reykjavik,64.1466,-21.9426,Development,Iceland
+Tbilisi,41.7151,44.8271,Development,Georgia
+Medellin,6.2442,-75.5812,Development,Colombia
+Baku,40.4093,49.8671,Development,Azerbaijan
+Jeju Island,33.4996,126.5312,Development,South Korea
+Cartagena,10.391,-75.4794,Development,Colombia
+Belgrade,44.7866,20.4489,Development,Serbia
+Siargao Island,9.848,126.0459,Development,Philippines
+Luang Prabang,19.8856,102.1347,Development,Laos
+Nusa Penida,-8.7277,115.5444,Development,Indonesia
+Phnom Penh,11.5564,104.9282,Development,Cambodia
+Tangier,35.7595,-5.8339,Development,Morocco
+Panama City,8.9824,-79.5199,Development,Panama
+Tunis,36.8065,10.1815,Development,Tunisia
+Colombo,6.9271,79.8612,Development,Sri Lanka
+Fortaleza,-3.7319,-38.5267,Development,Brazil
+Fort Kochi,9.9667,76.2333,Development,India
+Muscat,23.588,58.3829,Development,Oman
+Doha,25.2854,51.531,Development,Qatar
+Bengaluru,12.9716,77.5946,Development,India
+Chiang Mai,18.7883,98.9853,Development,Thailand
+Kuala Lumpur,3.139,101.6869,Development,Malaysia
+Porto,41.1579,-8.6291,Development,Portugal
+Valencia,39.4699,-0.3763,Development,Spain
+Warsaw,52.2297,21.0122,Development,Poland
+Hanoi,21.0278,105.8342,Development,Vietnam
+Santiago,-33.4489,-70.6693,Development,Chile
+Lima,-12.0464,-77.0428,Development,Peru
+Kathmandu,27.7172,85.324,Development,Nepal
+Marrakech,31.6295,-7.9811,Development,Morocco
+Cusco,-13.5319,-71.9675,Development,Peru
+Budapest,47.4979,19.0402,Development,Hungary
+Prague,50.0755,14.4378,Development,Czech Republic
+Kuala Lumpur,3.139,101.6869,Development,Malaysia
+Yangon,16.8409,96.1735,Development,Myanmar
+Cape Town,-33.9249,18.4241,Development,South Africa
+Tel Aviv,32.0853,34.7818,Development,Israel
+Amman,31.9454,35.9284,Development,Jordan
+Bucharest,44.4268,26.1025,Development,Romania
+Sofia,42.6977,23.3219,Development,Bulgaria
+Riga,56.9496,24.1052,Development,Latvia
+Vilnius,54.6872,25.2797,Development,Lithuania
+Lagos,6.5244,3.3792,Development,Nigeria
+Nairobi,-1.2921,36.8219,Development,Kenya
+Accra,5.6037,-0.187,Development,Ghana
+Manila,14.5995,120.9842,Development,Philippines
+Dakar,14.7167,-17.4677,Development,Senegal
+Lusaka,-15.3875,28.3228,Development,Zambia
+Kingston,17.9712,-76.7936,Development,Jamaica
+Montevideo,-34.9011,-56.1645,Development,Uruguay
+Panama City,8.9824,-79.5199,Development,Panama
+Santo Domingo,18.4861,-69.9312,Development,Dominican Republic
+Havana,23.1136,-82.3666,Development,Cuba
+Phnom Penh,11.5564,104.9282,Development,Cambodia
+Yangon,16.8409,96.1735,Development,Myanmar
+Phuket,7.8804,98.3923,Development,Thailand
+Danang,16.0544,108.2022,Development,Vietnam
+Punta Cana,18.5601,-68.3725,Development,Dominican Republic
+San Juan,18.4655,-66.1057,Development,Puerto Rico
+Canc�n,21.1619,-86.8515,Development,Mexico
+Thailand,15.87,100.9925,Consolidation,Thailand
+Bali,-8.3405,115.092,Consolidation,Indonesia
+Canc�n,21.1619,-86.8515,Consolidation,Mexico
+Prague,50.0755,14.4378,Consolidation,Czech Republic
+Barcelona,41.3851,2.1734,Consolidation,Spain
+Las Vegas,36.1699,-115.1398,Consolidation,United States
+Paris,48.8566,2.3522,Consolidation,France
+London,51.5074,-0.1278,Consolidation,United Kingdom
+Rome,41.9028,12.4964,Consolidation,Italy
+New York City,40.7128,-74.006,Consolidation,United States
+Orlando,28.5383,-81.3792,Consolidation,United States
+Sydney,-33.8688,151.2093,Consolidation,Australia
+Singapore,1.3521,103.8198,Consolidation,Singapore
+Hong Kong,22.3193,114.1694,Consolidation,Hong Kong
+Dubai,25.2048,55.2708,Consolidation,United Arab Emirates
+Tokyo,35.6762,139.6503,Consolidation,Japan
+Venice,45.4408,12.3155,Consolidation,Italy
+Florence,43.7696,11.2558,Consolidation,Italy
+Amsterdam,52.3676,4.9041,Consolidation,Netherlands
+Vienna,48.2082,16.3738,Consolidation,Austria
+Berlin,52.52,13.405,Consolidation,Germany
+Miami,25.7617,-80.1918,Consolidation,United States
+Los Angeles,34.0522,-118.2437,Consolidation,United States
+San Francisco,37.7749,-122.4194,Consolidation,United States
+Rio de Janeiro,-22.9068,-43.1729,Consolidation,Brazil
+Mexico City,19.4326,-99.1332,Consolidation,Mexico
+Toronto,43.6532,-79.3832,Consolidation,Canada
+Vancouver,49.2827,-123.1207,Consolidation,Canada
+Cairo,30.0444,31.2357,Consolidation,Egypt
+Istanbul,41.0082,28.9784,Consolidation,Turkey
+Athens,37.9838,23.7275,Consolidation,Greece
+Lisbon,38.7223,-9.1393,Consolidation,Portugal
+Seoul,37.5665,126.978,Consolidation,South Korea
+Buenos Aires,-34.6037,-58.3816,Consolidation,Argentina
+Johannesburg,-26.2041,28.0473,Consolidation,South Africa
+Moscow,55.7558,37.6173,Consolidation,Russia
+Beijing,39.9042,116.4074,Consolidation,China
+Shanghai,31.2304,121.4737,Consolidation,China
+Macau,22.1987,113.5439,Consolidation,Macau
+Melbourne,-37.8136,144.9631,Consolidation,Australia
+Auckland,-36.8485,174.7633,Consolidation,New Zealand
+Edinburgh,55.9533,-3.1883,Consolidation,United Kingdom
+Quebec City,46.8139,-71.208,Consolidation,Canada
+Montreal,45.5017,-73.5673,Consolidation,Canada
+Dublin,53.3498,-6.2603,Consolidation,Ireland
+Milan,45.4642,9.19,Consolidation,Italy
+Copenhagen,55.6761,12.5683,Consolidation,Denmark
+Stockholm,59.3293,18.0686,Consolidation,Sweden
+Oslo,59.9139,10.7522,Consolidation,Norway
+Helsinki,60.1699,24.9384,Consolidation,Finland
+Brussels,50.8503,4.3517,Consolidation,Belgium
+Munich,48.1351,11.582,Consolidation,Germany
+Frankfurt,50.1109,8.6821,Consolidation,Germany
+Zurich,47.3769,8.5417,Consolidation,Switzerland
+Geneva,46.2044,6.1432,Consolidation,Switzerland
+Wellington,-41.2865,174.7762,Consolidation,New Zealand
+Honolulu,21.3069,-157.8583,Consolidation,United States
+Chicago,41.8781,-87.6298,Consolidation,United States
+Seattle,47.6062,-122.3321,Consolidation,United States
+Boston,42.3601,-71.0589,Consolidation,United States
+New Orleans,29.9511,-90.0715,Consolidation,United States
+San Diego,32.7157,-117.1611,Consolidation,United States
+Washington D.C.,38.9072,-77.0369,Consolidation,United States
+Philadelphia,39.9526,-75.1652,Consolidation,United States
+Denver,39.7392,-104.9903,Consolidation,United States
+Portland,45.5152,-122.6784,Consolidation,United States
+Blackpool,53.8142,-3.0548,Stagnation,United Kingdom
+Benidorm,38.5382,-0.13,Stagnation,Spain
+Atlantic City,39.3643,-74.4229,Stagnation,United States
+Niagara Falls,43.0962,-79.0377,Stagnation,United States/Canada
+Acapulco,16.8531,-99.8237,Stagnation,Mexico
+Varadero,23.1799,-81.189,Stagnation,Cuba
+Sharm El Sheikh,27.9158,34.3299,Stagnation,Egypt
+Goa,15.2993,74.124,Stagnation,India
+Pattaya,12.9236,100.8825,Stagnation,Thailand
+Margate,-30.863,30.3705,Stagnation,South Africa
+Torremolinos,36.6204,-4.4998,Stagnation,Spain
+Malindi,-3.2184,40.1164,Stagnation,Kenya
+Cebu,10.3157,123.8854,Stagnation,Philippines
+Bournemouth,50.7192,-1.8808,Stagnation,United Kingdom
+Gold Coast,-28.0167,153.4,Stagnation,Australia
+Brighton,50.8225,-0.1372,Stagnation,United Kingdom
+Salou,41.077,1.1316,Stagnation,Spain
+Daytona Beach,29.2108,-81.0228,Stagnation,United States
+Benalm�dena,36.5955,-4.569,Stagnation,Spain
+Forte dei Marmi,43.958,10.176,Stagnation,Italy
+Sun City,-25.347,27.0939,Stagnation,South Africa
+Hua Hin,12.5684,99.9577,Stagnation,Thailand
+Vina del Mar,-33.0245,-71.5518,Stagnation,Chile
+Puri,19.8135,85.8312,Stagnation,India
+Blackpool,53.8142,-3.0548,Stagnation,United Kingdom
+Lourdes,43.095,-0.0463,Stagnation,France
+Agra,27.1767,78.0081,Stagnation,India
+Rotorua,-38.1368,176.2497,Stagnation,New Zealand
+Branson,36.6437,-93.2185,Stagnation,United States
+Naples,40.8518,14.2681,Stagnation,Italy
+Lake Tahoe,39.0968,-120.0324,Stagnation,United States
+Mont Saint-Michel,48.6361,-1.5115,Stagnation,France
+Alexandria,31.2001,29.9187,Stagnation,Egypt
+Sousse,35.8256,10.6387,Stagnation,Tunisia
+Puerto Vallarta,20.6534,-105.2253,Stagnation,Mexico
+Bali,-8.3405,115.092,Stagnation,Indonesia
+Vancouver,49.2827,-123.1207,Stagnation,Canada
+Fiji,-17.7134,178.065,Stagnation,Fiji
+Corfu,39.6243,19.9217,Stagnation,Greece
+Maldives,3.2028,73.2207,Stagnation,Maldives
+Gozo,36.0443,14.2512,Stagnation,Malta
+Majorca,39.6953,3.0176,Stagnation,Spain
+Aruba,12.5211,-69.9683,Stagnation,Aruba
+Seychelles,-4.6796,55.492,Stagnation,Seychelles
+Cayman Islands,19.5135,-80.5669,Stagnation,Cayman Islands
+Reunion,-21.1151,55.5364,Stagnation,France
+Bermuda,32.3078,-64.7505,Stagnation,Bermuda
+Barbados,13.1939,-59.5432,Stagnation,Barbados
+Jersey,49.2144,-2.1313,Stagnation,Jersey
+St. Tropez,43.2679,6.6407,Stagnation,France
+Cannes,43.5528,7.0174,Stagnation,France
+Nice,43.7102,7.262,Stagnation,France
+Palma de Mallorca,39.5696,2.6502,Stagnation,Spain
+Puerto Rico,18.2208,-66.5901,Stagnation,United States
+St. Thomas,18.3381,-64.8941,Stagnation,United States Virgin Islands
+Key West,24.5551,-81.78,Stagnation,United States
+Biloxi,30.396,-88.8853,Stagnation,United States
+Atlantic City,39.3643,-74.4229,Stagnation,United States
+Galveston,29.3013,-94.7977,Stagnation,United States
+Myrtle Beach,33.6891,-78.8867,Stagnation,United States
+Varosha,35.11,33.9528,Decline,Cyprus
+Dead Sea Resorts,31.559,35.4732,Decline,Israel/Jordan
+Damascus,33.5138,36.2765,Decline,Syria
+Agadez,16.9733,7.9911,Decline,Niger
+Karachi,24.8607,67.0011,Decline,Pakistan
+Kabul,34.5553,69.2075,Decline,Afghanistan
+Mogadishu,2.0469,45.3182,Decline,Somalia
+Detroit,42.3314,-83.0458,Decline,United States
+Venice,45.4408,12.3155,Decline,Italy
+Great Barrier Reef,-18.2871,147.6992,Decline,Australia
+Pamukkale,37.9204,29.1194,Decline,Turkey
+Ephesus,37.939,27.341,Decline,Turkey
+Teotihuacan,19.6925,-98.8434,Decline,Mexico
+Chichen Itza,20.6843,-88.5678,Decline,Mexico
+Petra,30.3285,35.4444,Decline,Jordan
+Angkor Wat,13.4125,103.867,Decline,Cambodia
+Machu Picchu,-13.1631,-72.545,Decline,Peru
+Timbuktu,16.7666,-3.0026,Decline,Mali
+Kathmandu,27.7172,85.324,Decline,Nepal
+Baghdad,33.3128,44.3615,Decline,Iraq
+Bilbao,43.263,-2.935,Rejuvenation,Spain
+Liverpool,53.4084,-2.9916,Rejuvenation,United Kingdom
+Las Vegas,36.1699,-115.1398,Rejuvenation,United States
+Macau,22.1987,113.5439,Rejuvenation,Macau
+Dubai,25.2048,55.2708,Rejuvenation,United Arab Emirates
+Rotterdam,51.9244,4.4777,Rejuvenation,Netherlands
+Valencia,39.4699,-0.3763,Rejuvenation,Spain
+Osaka,34.6937,135.5023,Rejuvenation,Japan
+Glasgow,55.8642,-4.2518,Rejuvenation,United Kingdom
+Detroit,42.3314,-83.0458,Rejuvenation,United States
+Baltimore,39.2904,-76.6122,Rejuvenation,United States
+Pittsburgh,40.4406,-79.9959,Rejuvenation,United States
+Bilbao,43.263,-2.935,Rejuvenation,Spain
+Portland,45.5152,-122.6784,Rejuvenation,United States
+Seville,37.3891,-5.9845,Rejuvenation,Spain
+Leeds,53.8008,-1.5491,Rejuvenation,United Kingdom
+Manchester,53.4808,-2.2426,Rejuvenation,United Kingdom
+Beirut,33.8938,35.5018,Rejuvenation,Lebanon
+Wroc?aw,51.1079,17.0385,Rejuvenation,Poland
+Krak�w,50.0647,19.945,Rejuvenation,Poland
+Belgrade,44.7866,20.4489,Rejuvenation,Serbia
+Belfast,54.5973,-5.9301,Rejuvenation,United Kingdom
+Gda?sk,54.352,18.6466,Rejuvenation,Poland
+Detroit,42.3314,-83.0458,Rejuvenation,United States
+Marseille,43.2965,5.3698,Rejuvenation,France
+Turin,45.0703,7.6869,Rejuvenation,Italy
+Bogot�,4.711,-74.0721,Rejuvenation,Colombia
+Lima,-12.0464,-77.0428,Rejuvenation,Peru
+Johannesburg,-26.2041,28.0473,Rejuvenation,South Africa
+Casablanca,33.5731,-7.5898,Rejuvenation,Morocco
+Lisbon,38.7223,-9.1393,Rejuvenation,Portugal
+Quebec City,46.8139,-71.208,Rejuvenation,Canada
+Cardiff,51.4816,-3.1791,Rejuvenation,United Kingdom
+Bilbao,43.263,-2.935,Rejuvenation,Spain
+Busan,35.1796,129.0756,Rejuvenation,South Korea
+Sydney,-33.8688,151.2093,Rejuvenation,Australia
+Brisbane,-27.4698,153.0251,Rejuvenation,Australia
+Melbourne,-37.8136,144.9631,Rejuvenation,Australia
+Perth,-31.9505,115.8605,Rejuvenation,Australia
+Adelaide,-34.9285,138.6007,Rejuvenation,Australia
+Canberra,-35.2809,149.13,Rejuvenation,Australia
+Hobart,-42.8821,147.3272,Rejuvenation,Australia
+Darwin,-12.4634,130.8456,Rejuvenation,Australia
+Alice Springs,-23.698,133.8807,Rejuvenation,Australia
+Cairns,-16.9186,145.7781,Rejuvenation,Australia
+Gold Coast,-28.0167,153.4,Rejuvenation,Australia
+Newcastle,-32.9283,151.7817,Rejuvenation,Australia
+Wollongong,-34.4278,150.8931,Rejuvenation,Australia
+Geelong,-38.1499,144.3617,Rejuvenation,Australia
+Townsville,-19.2589,146.8169,Rejuvenation,Australia
+Albury,-36.0737,146.9135,Rejuvenation,Australia
+Ballarat,-37.5622,143.8503,Rejuvenation,Australia
+Bendigo,-36.757,144.2794,Rejuvenation,Australia
+Bundaberg,-24.8662,152.3489,Rejuvenation,Australia
+Burnie,-41.0528,145.904,Rejuvenation,Australia
+Coffs Harbour,-30.2963,153.114,Rejuvenation,Australia
+Devonport,-41.1806,146.3465,Rejuvenation,Australia
+Gladstone,-23.842,151.2583,Rejuvenation,Australia
+Lismore,-28.809,153.2773,Rejuvenation,Australia
+Mackay,-21.1411,149.186,Rejuvenation,Australia
+Rockhampton,-23.3779,150.51,Rejuvenation,Australia
+Tamworth,-31.0833,150.9167,Rejuvenation,Australia
+Toowoomba,-27.5606,151.9537,Rejuvenation,Australia
+Traralgon,-38.195,146.541,Rejuvenation,Australia
+Townsville,-19.2589,146.8169,Rejuvenation,Australia
+Wagga Wagga,-35.108,147.3598,Rejuvenation,Australia
+Port Macquarie,-31.431,152.9089,Rejuvenation,Australia
+Busselton,-33.6525,115.3455,Rejuvenation,Australia
+Bunbury,-33.3271,115.6414,Rejuvenation,Australia
+Geraldton,-28.7782,114.614,Rejuvenation,Australia
+Kalgoorlie,-30.7489,121.465,Rejuvenation,Australia
+Karratha,-20.7377,116.846,Rejuvenation,Australia
+Broome,-17.9614,122.2359,Rejuvenation,Australia
+Albany,-35.0238,117.8814,Rejuvenation,Australia
+Socotra Island,12.455,53.823,Exploration,Yemen
+Faroe Islands,62,-6.79,Exploration,Denmark
+Svalbard,78,16,Exploration,Norway
+Kamchatka Peninsula,56,160,Exploration,Russia
+Gal�pagos Islands,-0.9538,-90.9656,Exploration,Ecuador
+Easter Island,-27.1127,-109.3497,Exploration,Chile
+Antarctica,-75.25,-0.0715,Exploration,Antarctica
+Madagascar Rainforests,-18.7669,46.8691,Exploration,Madagascar
+Bhutan Himalayas,27.5142,90.4336,Exploration,Bhutan
+Amazon Rainforest,-3.4653,-62.2159,Exploration,Brazil
+Nunavut,70.2998,-83.1076,Exploration,Canada
+Gobi Desert,42.7952,103.1669,Exploration,Mongolia
+Danakil Depression,14.2417,40.3,Exploration,Ethiopia
+Lord Howe Island,-31.558,159.083,Exploration,Australia
+Simien Mountains,13.1833,38.0667,Exploration,Ethiopia
+Mount Roraima,5.1412,-60.7638,Exploration,Venezuela
+Kerguelen Islands,-49.2804,69.3486,Exploration,France
+Mount Kailash,31.0675,81.3119,Exploration,China
+Baffin Island,67.6488,-66.0832,Exploration,Canada
+Wrangel Island,71.225,-179.5,Exploration,Russia
+Cape York Peninsula,-12.5,142.5,Exploration,Australia
+Darien Gap,7.9167,-77.6667,Exploration,Panama
+Irian Jaya,-4.2699,138.0804,Exploration,Indonesia
+Northern Patagonia Ice Field,-47,-73.5,Exploration,Chile
+Tsingy de Bemaraha,-18.6667,44.6167,Exploration,Madagascar
+Denali Wilderness,63.0692,-151.0064,Exploration,USA
+Atacama Desert,-24.5,-69.25,Exploration,Chile
+Congo Rainforest,-0.228,15.8277,Exploration,DR Congo
+Namib Desert,-24.7018,15.3042,Exploration,Namibia
+Mount Elgon,1.1333,34.5833,Exploration,Uganda
+Lake Baikal,53.5587,108.165,Exploration,Russia
+K2 Mountain,35.8825,76.5133,Exploration,Pakistan
+Bromo Tengger Semeru,8,112.95,Exploration,Indonesia
+Skeleton Coast,-19.2245,12.8026,Exploration,Namibia
+Simpson Desert,-25,137,Exploration,Australia
+Salawin National Park,17.9333,97.7167,Exploration,Thailand
+Mount Kilimanjaro,-3.0674,37.3556,Exploration,Tanzania
+Karijini National Park,-22.3553,118.7061,Exploration,Australia
+Okavango Delta,-19,22,Exploration,Botswana
+Great Bear Rainforest,52.4167,-127.5,Exploration,Canada
+Borneo Rainforest,2.5,113,Exploration,Malaysia
+Soconusco,15,-92.5,Exploration,Mexico
+Daintree Rainforest,-16.1732,145.4185,Exploration,Australia
+Altai Mountains,49,89,Exploration,Russia
+Rock Islands,7.229,134.345,Exploration,Palau
+Makgadikgadi Pans,-20.5,25.8333,Exploration,Botswana
+Auyuittuq National Park,67.8,-65,Exploration,Canada
+Papua Highlands,-6.0833,143.6667,Exploration,Papua New Guinea
+Sulawesi Island,-1.4304,121.4456,Exploration,Indonesia
+Great Barrier Reef,-18.2871,147.6992,Exploration,Australia
+Angel Falls,5.9674,-62.5356,Exploration,Venezuela
+Mount Kinabalu,6.075,116.5583,Exploration,Malaysia
+Danube Delta,45.245,29.0421,Exploration,Romania
+Iguazu Falls,-25.6953,-54.4367,Exploration,Argentina
+Mount Everest Base Camp,28.0026,86.8528,Exploration,Nepal
+Tierra del Fuego,-54.8019,-68.302,Exploration,Argentina
+Gunung Mulu National Park,4.1276,114.9283,Exploration,Malaysia
+Cape Horn,-55.9833,-67.2667,Exploration,Chile
+Komodo Island,-8.55,119.45,Exploration,Indonesia
+Bwindi Impenetrable Forest,-1.0556,29.7304,Exploration,Uganda
+Lake Turkana,3.4654,36.0097,Exploration,Kenya
+Isle of Skye,57.5359,-6.2263,Exploration,UK
+Tasmania,-42.0409,146.8087,Exploration,Australia
+Kavango-Zambezi,17.9,24.7,Exploration,Botswana
+Salar de Uyuni,-20.1338,-67.4891,Exploration,Bolivia
+Sumba Island,-9.642,119.6114,Exploration,Indonesia
+Darien National Park,7.7081,-77.5287,Exploration,Panama
+Kafue National Park,-15,25,Exploration,Zambia
+Wulingyuan,29.3478,110.5292,Exploration,China
+Torres del Paine,-51.2538,-72.336,Exploration,Chile
+Sossusvlei,-24.7326,15.3024,Exploration,Namibia
+Mashpi Rainforest,0.1598,-78.8701,Exploration,Ecuador
+Seychelles,-4.6796,55.4915,Exploration,Seychelles
+Spiti Valley,32.2468,78.0025,Exploration,India
+Con Dao Islands,8.686,106.609,Exploration,Vietnam
+Marble Caves,-46.6577,-72.6369,Exploration,Chile
+Pantanal,-16.598,-56.0949,Exploration,Brazil
+Northeast Greenland National Park,75,-40,Exploration,Greenland
+Siberian Taiga,60,105,Exploration,Russia
+Himalayan Foothills,27.7,85.3333,Exploration,Nepal
+Bwabwata National Park,-18,21.5,Exploration,Namibia
+Uluru,-25.3444,131.0369,Exploration,Australia
+R�o Pl�tano Biosphere Reserve,15.7333,-84.8,Exploration,Honduras
+Canaima National Park,5.1856,-61.6382,Exploration,Venezuela
+Dja Faunal Reserve,3.4167,12.7167,Exploration,Cameroon
+Cape Wrath,58.6234,-5.0097,Exploration,UK
+Virunga Mountains,-1.3967,29.4658,Exploration,Rwanda
+Gulf of Carpentaria,-15,139,Exploration,Australia
+Mount Athos,40.1601,24.3268,Exploration,Greece
+Dogon Country,14.45,-3.3333,Exploration,Mali
+Bohemian Forest,48.9266,13.716,Exploration,Czech Republic
+Kaokoland,-18,13,Exploration,Namibia
+Fraser Island,-25.2167,153.1333,Exploration,Australia
+Adirondack Mountains,44.1124,-73.9235,Exploration,USA
+Pamir Mountains,38.5,73,Exploration,Tajikistan
+Gunnison National Forest,38.7,-107,Exploration,USA
+Mount Toubkal,31.0626,-7.9181,Exploration,Morocco
+Drakensberg Mountains,-29.5,29.5,Exploration,South Africa
+Dzungarian Alatau,45,82,Exploration,Kazakhstan
+Nunavik,57.5,-75,Exploration,Canada
+Greenland Ice Sheet,72,-40,Exploration,Greenland
+Khangai Mountains,47,100,Exploration,Mongolia
+Samar Island,11.8918,125.0155,Exploration,Philippines
+Lake Balkhash,46.5,74,Exploration,Kazakhstan
+Kaeng Krachan National Park,12.8833,99.4667,Exploration,Thailand
+Transylvania,46.7704,23.5914,Exploration,Romania
+Northern Territory,-19.4914,132.55,Exploration,Australia
+Luang Prabang,19.8833,102.1333,Involvement,Laos
+Havana,23.1136,-82.3666,Involvement,Cuba
+Mandalay,21.9162,95.9559,Involvement,Myanmar
+Addis Ababa,8.9806,38.7578,Involvement,Ethiopia
+Kotor,42.4247,18.7712,Involvement,Montenegro
+Tbilisi,41.7151,44.8271,Involvement,Georgia
+Bagan,21.1717,94.8585,Involvement,Myanmar
+Gor�e Island,14.6681,-17.3983,Involvement,Senegal
+Minsk,53.9045,27.5615,Involvement,Belarus
+Lviv,49.8397,24.0297,Involvement,Ukraine
+Gjirokast�r,40.0758,20.1389,Involvement,Albania
+Valparaiso,-33.0472,-71.6127,Involvement,Chile
+Chiang Rai,19.9106,99.84,Involvement,Thailand
+Chisinau,47.0105,28.8638,Involvement,Moldova
+Lhasa,29.652,91.1721,Involvement,China
+Ulaanbaatar,47.8864,106.9057,Involvement,Mongolia
+Yazd,31.8974,54.3569,Involvement,Iran
+Muscat,23.588,58.3829,Involvement,Oman
+Lom�,6.1725,1.2314,Involvement,Togo
+Cotonou,6.3703,2.3912,Involvement,Benin
+Maputo,-25.9692,32.5732,Involvement,Mozambique
+Asmara,15.3229,38.9251,Involvement,Eritrea
+Lilongwe,-13.9626,33.7741,Involvement,Malawi
+Nouakchott,18.0735,-15.9582,Involvement,Mauritania
+Paramaribo,5.852,-55.2038,Involvement,Suriname
+San Salvador,13.6929,-89.2182,Involvement,El Salvador
+Bishkek,42.8746,74.5698,Involvement,Kyrgyzstan
+Khartoum,15.5007,32.5599,Involvement,Sudan
+Belmopan,17.251,-88.759,Involvement,Belize
+Skopje,41.9973,21.428,Involvement,North Macedonia
+Podgorica,42.4304,19.2594,Involvement,Montenegro
+Bucharest,44.4268,26.1025,Involvement,Romania
+Zagreb,45.815,15.9819,Involvement,Croatia
+Tirana,41.3275,19.8187,Involvement,Albania
+Sarajevo,43.8563,18.4131,Involvement,Bosnia and Herzegovina
+Sofia,42.6977,23.3219,Involvement,Bulgaria
+Tallinn,59.437,24.7536,Involvement,Estonia
+Riga,56.9496,24.1052,Involvement,Latvia
+Vilnius,54.6872,25.2797,Involvement,Lithuania
+Podlasie,53.1667,23.1643,Involvement,Poland
+Kigali,-1.9706,30.1044,Involvement,Rwanda
+Kampala,0.3476,32.5825,Involvement,Uganda
+Port Moresby,-9.4438,147.1803,Involvement,Papua New Guinea
+Phnom Penh,11.5564,104.9282,Involvement,Cambodia
+Vientiane,17.9757,102.6331,Involvement,Laos
+Dushanbe,38.5598,68.787,Involvement,Tajikistan
+Islamabad,33.6844,73.0479,Involvement,Pakistan
+Niamey,13.5116,2.1254,Involvement,Niger
+Bamako,12.6392,-8.0029,Involvement,Mali
+Djibouti,11.8251,42.5903,Involvement,Djibouti
+Monrovia,6.3156,-10.8074,Involvement,Liberia
+Freetown,8.4657,-13.2317,Involvement,Sierra Leone
+Bissau,11.8817,-15.617,Involvement,Guinea-Bissau
+Conakry,9.6412,-13.5784,Involvement,Guinea
+Bujumbura,-3.3619,29.3599,Involvement,Burundi
+Libreville,0.4162,9.4673,Involvement,Gabon
+Windhoek,-22.5609,17.0658,Involvement,Namibia
+Brazzaville,-4.2634,15.2429,Involvement,Republic of Congo
+Vladivostok,43.1198,131.8869,Involvement,Russia
+Irkutsk,52.2869,104.305,Involvement,Russia
+Yakutsk,62.0355,129.6755,Involvement,Russia
+Murmansk,68.9585,33.0827,Involvement,Russia
+Arkhangelsk,64.5399,40.5168,Involvement,Russia
+La Paz,-16.4897,-68.1193,Involvement,Bolivia
+Sucre,-19.0196,-65.2619,Involvement,Bolivia
+Quito,-0.1807,-78.4678,Involvement,Ecuador
+Montevideo,-34.9011,-56.1645,Involvement,Uruguay
+Asunci�n,-25.2637,-57.5759,Involvement,Paraguay
+Managua,12.1364,-86.2514,Involvement,Nicaragua
+San Jos�,9.9281,-84.0907,Involvement,Costa Rica
+Tegucigalpa,14.0723,-87.1921,Involvement,Honduras
+Belize City,17.5046,-88.1962,Involvement,Belize
+Kingston,17.9712,-76.7936,Involvement,Jamaica
+Port-au-Prince,18.5944,-72.3074,Involvement,Haiti
+Santo Domingo,18.4861,-69.9312,Involvement,Dominican Republic
+Reykjavik,64.1466,-21.9426,Involvement,Iceland
+Nuuk,64.1835,-51.7216,Involvement,Greenland
+Thimphu,27.4712,89.6339,Involvement,Bhutan
+Male,4.1755,73.5093,Involvement,Maldives
+Yerevan,40.1792,44.4991,Involvement,Armenia
+Pyongyang,39.0392,125.7625,Involvement,North Korea
+Port Louis,-20.1609,57.5012,Involvement,Mauritius
+T�rshavn,62.0079,-6.79,Involvement,Faroe Islands
+Pago Pago,-14.2756,-170.702,Involvement,American Samoa
+Majuro,7.1164,171.1858,Involvement,Marshall Islands
+Palikir,6.9147,158.161,Involvement,Micronesia
+Funafuti,-8.5201,179.1981,Involvement,Tuvalu
+Tarawa,-1.441,173.0376,Involvement,Kiribati
+Honiara,-9.4456,159.9729,Involvement,Solomon Islands
+Apia,-13.8314,-171.765,Involvement,Samoa
+Ngerulmud,7.5,134.6243,Involvement,Palau
+Port Vila,-17.7333,168.3273,Involvement,Vanuatu
+Nuku'alofa,-21.1393,-175.2047,Involvement,Tonga
+Suva,-18.1248,178.4501,Involvement,Fiji
+Moroni,-11.7172,43.2473,Involvement,Comoros
+Victoria,-4.6191,55.4513,Involvement,Seychelles
+S�o Tom�,0.3302,6.7333,Involvement,S�o Tom� and Pr�ncipe
+Asmara,15.3229,38.9251,Involvement,Eritrea
+Port Moresby,-9.4438,147.1803,Involvement,Papua New Guinea
+Nairobi,-1.2921,36.8219,Involvement,Kenya
+Reykjavik,64.1466,-21.9426,Development,Iceland
+Dubrovnik,42.6507,18.0944,Development,Croatia
+Phuket,7.9519,98.3381,Development,Thailand
+Marrakech,31.6295,-7.9811,Development,Morocco
+Siem Reap,13.3671,103.8448,Development,Cambodia
+Budapest,47.4979,19.0402,Development,Hungary
+Prague,50.0755,14.4378,Development,Czech Republic
+Krakow,50.0647,19.945,Development,Poland
+Seoul,37.5665,126.978,Development,South Korea
+Hanoi,21.0278,105.8342,Development,Vietnam
+Lisbon,38.7223,-9.1393,Development,Portugal
+Taipei,25.033,121.5654,Development,Taiwan
+Santiago,-33.4489,-70.6693,Development,Chile
+Cape Town,-33.9249,18.4241,Development,South Africa
+Auckland,-36.8485,174.7633,Development,New Zealand
+Quebec City,46.8139,-71.208,Development,Canada
+Moscow,55.7558,37.6173,Development,Russia
+Athens,37.9838,23.7275,Development,Greece
+Seville,37.3891,-5.9845,Development,Spain
+Buenos Aires,-34.6037,-58.3816,Development,Argentina
+Beijing,39.9042,116.4074,Development,China
+Macau,22.1987,113.5439,Development,Macau
+Abu Dhabi,24.4539,54.3773,Development,UAE
+Doha,25.2854,51.531,Development,Qatar
+Colombo,6.9271,79.8612,Development,Sri Lanka
+Muscat,23.588,58.3829,Development,Oman
+Casablanca,33.5731,-7.5898,Development,Morocco
+Kuala Lumpur,3.139,101.6869,Development,Malaysia
+Manila,14.5995,120.9842,Development,Philippines
+San Jose,37.3382,-121.8863,Development,USA
+San Diego,32.7157,-117.1611,Development,USA
+Porto,41.1579,-8.6291,Development,Portugal
+Bruges,51.2093,3.2247,Development,Belgium
+Bratislava,48.1486,17.1077,Development,Slovakia
+Ho Chi Minh City,10.8231,106.6297,Development,Vietnam
+Helsinki,60.1699,24.9384,Development,Finland
+Mumbai,19.076,72.8777,Development,India
+Jaipur,26.9124,75.7873,Development,India
+Cairo,30.0444,31.2357,Development,Egypt
+Amman,31.9454,35.9284,Development,Jordan
+Istanbul,41.0082,28.9784,Development,Turkey
+Gdansk,54.352,18.6466,Development,Poland
+Sofia,42.6977,23.3219,Development,Bulgaria
+St. Petersburg,59.9311,30.3609,Development,Russia
+Busan,35.1796,129.0756,Development,South Korea
+Tallinn,59.437,24.7536,Development,Estonia
+Riga,56.9496,24.1052,Development,Latvia
+Vilnius,54.6872,25.2797,Development,Lithuania
+Kyoto,35.0116,135.7681,Development,Japan
+Osaka,34.6937,135.5023,Development,Japan
+Nagoya,35.1815,136.9066,Development,Japan
+Jakarta,-6.2088,106.8456,Development,Indonesia
+Yogyakarta,-7.7956,110.3695,Development,Indonesia
+Lima,-12.0464,-77.0428,Development,Peru
+Cusco,-13.5319,-71.9675,Development,Peru
+La Paz,-16.4897,-68.1193,Development,Bolivia
+Mexico City,19.4326,-99.1332,Development,Mexico
+Guadalajara,20.6597,-103.3496,Development,Mexico
+Monterrey,25.6866,-100.3161,Development,Mexico
+Brisbane,-27.4698,153.0251,Development,Australia
+Perth,-31.9505,115.8605,Development,Australia
+Adelaide,-34.9285,138.6007,Development,Australia
+Cairns,-16.9186,145.7781,Development,Australia
+Rotorua,-38.1368,176.2497,Development,New Zealand
+Queenstown,-45.0312,168.6626,Development,New Zealand
+Guangzhou,23.1291,113.2644,Development,China
+Shenzhen,22.5431,114.0579,Development,China
+Chengdu,30.5728,104.0668,Development,China
+Xi'an,34.3416,108.9398,Development,China
+Hangzhou,30.2741,120.1551,Development,China
+Suzhou,31.2989,120.5853,Development,China
+Johannesburg,-26.2041,28.0473,Development,South Africa
+Durban,-29.8587,31.0218,Development,South Africa
+Nairobi,-1.2921,36.8219,Development,Kenya
+Accra,5.6037,-0.187,Development,Ghana
+Lagos,6.5244,3.3792,Development,Nigeria
+Addis Ababa,8.9806,38.7578,Development,Ethiopia
+Tel Aviv,32.0853,34.7818,Development,Israel
+Jerusalem,31.7683,35.2137,Development,Israel
+Cebu City,10.3157,123.8854,Development,Philippines
+Davao City,7.1907,125.4553,Development,Philippines
+Kigali,-1.9706,30.1044,Development,Rwanda
+Dar es Salaam,-6.7924,39.2083,Development,Tanzania
+Nassau,25.0443,-77.3504,Development,Bahamas
+Montego Bay,18.4762,-77.8939,Development,Jamaica
+Santo Domingo,18.4861,-69.9312,Development,Dominican Republic
+Panama City,8.9824,-79.5199,Development,Panama
+San Juan,18.4655,-66.1057,Development,Puerto Rico
+Bogot�,4.711,-74.0721,Development,Colombia
+Medell�n,6.2442,-75.5812,Development,Colombia
+Cartagena,10.391,-75.4794,Development,Colombia
+Guayaquil,-2.17,-79.9224,Development,Ecuador
+Quito,-0.1807,-78.4678,Development,Ecuador
+San Jos�,9.9281,-84.0907,Development,Costa Rica
+Managua,12.1364,-86.2514,Development,Nicaragua
+Paris,48.8566,2.3522,Consolidation,France
+London,51.5074,-0.1278,Consolidation,UK
+Rome,41.9028,12.4964,Consolidation,Italy
+New York City,40.7128,-74.006,Consolidation,USA
+Barcelona,41.3851,2.1734,Consolidation,Spain
+Las Vegas,36.1699,-115.1398,Consolidation,USA
+Sydney,-33.8688,151.2093,Consolidation,Australia
+Dubai,25.2048,55.2708,Consolidation,UAE
+Bangkok,13.7563,100.5018,Consolidation,Thailand
+Hong Kong,22.3193,114.1694,Consolidation,Hong Kong
+Singapore,1.3521,103.8198,Consolidation,Singapore
+Orlando,28.5383,-81.3792,Consolidation,USA
+Cancun,21.1619,-86.8515,Consolidation,Mexico
+Bali,-8.3405,115.092,Consolidation,Indonesia
+Maldives,3.2028,73.2207,Consolidation,Maldives
+Phuket,7.9519,98.3381,Consolidation,Thailand
+Punta Cana,18.5601,-68.3725,Consolidation,Dominican Republic
+Honolulu,21.3069,-157.8583,Consolidation,USA
+Amsterdam,52.3676,4.9041,Consolidation,Netherlands
+Vienna,48.2082,16.3738,Consolidation,Austria
+Venice,45.4408,12.3155,Consolidation,Italy
+Munich,48.1351,11.582,Consolidation,Germany
+Florence,43.7696,11.2558,Consolidation,Italy
+Madrid,40.4168,-3.7038,Consolidation,Spain
+Berlin,52.52,13.405,Consolidation,Germany
+San Francisco,37.7749,-122.4194,Consolidation,USA
+Los Angeles,34.0522,-118.2437,Consolidation,USA
+Miami,25.7617,-80.1918,Consolidation,USA
+Rio de Janeiro,-22.9068,-43.1729,Consolidation,Brazil
+S�o Paulo,-23.5505,-46.6333,Consolidation,Brazil
+Milan,45.4642,9.19,Consolidation,Italy
+Toronto,43.6532,-79.3832,Consolidation,Canada
+Vancouver,49.2827,-123.1207,Consolidation,Canada
+Niagara Falls,43.0962,-79.0377,Consolidation,USA/Canada
+Cairo,30.0444,31.2357,Consolidation,Egypt
+Marrakech,31.6295,-7.9811,Consolidation,Morocco
+Istanbul,41.0082,28.9784,Consolidation,Turkey
+Athens,37.9838,23.7275,Consolidation,Greece
+Santorini,36.3932,25.4615,Consolidation,Greece
+Mykonos,37.4467,25.3289,Consolidation,Greece
+Montego Bay,18.4762,-77.8939,Consolidation,Jamaica
+Havana,23.1136,-82.3666,Consolidation,Cuba
+Prague,50.0755,14.4378,Consolidation,Czech Republic
+Budapest,47.4979,19.0402,Consolidation,Hungary
+Krakow,50.0647,19.945,Consolidation,Poland
+Warsaw,52.2297,21.0122,Consolidation,Poland
+Edinburgh,55.9533,-3.1883,Consolidation,UK
+Dublin,53.3498,-6.2603,Consolidation,Ireland
+Brussels,50.8503,4.3517,Consolidation,Belgium
+Copenhagen,55.6761,12.5683,Consolidation,Denmark
+Stockholm,59.3293,18.0686,Consolidation,Sweden
+Oslo,59.9139,10.7522,Consolidation,Norway
+Helsinki,60.1699,24.9384,Consolidation,Finland
+Tokyo,35.6762,139.6503,Consolidation,Japan
+Kyoto,35.0116,135.7681,Consolidation,Japan
+Osaka,34.6937,135.5023,Consolidation,Japan
+Shanghai,31.2304,121.4737,Consolidation,China
+Beijing,39.9042,116.4074,Consolidation,China
+Seoul,37.5665,126.978,Consolidation,South Korea
+Delhi,28.7041,77.1025,Consolidation,India
+Mumbai,19.076,72.8777,Consolidation,India
+Goa,15.2993,74.124,Consolidation,India
+Melbourne,-37.8136,144.9631,Consolidation,Australia
+Gold Coast,-28.0167,153.4,Consolidation,Australia
+Queenstown,-45.0312,168.6626,Consolidation,New Zealand
+Auckland,-36.8485,174.7633,Consolidation,New Zealand
+Rotorua,-38.1368,176.2497,Consolidation,New Zealand
+Cape Town,-33.9249,18.4241,Consolidation,South Africa
+Johannesburg,-26.2041,28.0473,Consolidation,South Africa
+Abu Dhabi,24.4539,54.3773,Consolidation,UAE
+Doha,25.2854,51.531,Consolidation,Qatar
+Singapore,1.3521,103.8198,Consolidation,Singapore
+Kuala Lumpur,3.139,101.6869,Consolidation,Malaysia
+Macau,22.1987,113.5439,Consolidation,Macau
+Pattaya,12.9236,100.8825,Consolidation,Thailand
+Chiang Mai,18.7883,98.9853,Consolidation,Thailand
+Jakarta,-6.2088,106.8456,Consolidation,Indonesia
+Ho Chi Minh City,10.8231,106.6297,Consolidation,Vietnam
+Hanoi,21.0278,105.8342,Consolidation,Vietnam
+Manila,14.5995,120.9842,Consolidation,Philippines
+Boracay,11.9674,121.925,Consolidation,Philippines
+Taipei,25.033,121.5654,Consolidation,Taiwan
+Chicago,41.8781,-87.6298,Consolidation,USA
+Boston,42.3601,-71.0589,Consolidation,USA
+Washington D.C.,38.9072,-77.0369,Consolidation,USA
+New Orleans,29.9511,-90.0715,Consolidation,USA
+Venice,45.4408,12.3155,Stagnation,Italy
+Pattaya,12.9236,100.8825,Stagnation,Thailand
+Acapulco,16.8531,-99.8237,Stagnation,Mexico
+Benidorm,38.5382,-0.13,Stagnation,Spain
+Magaluf,39.5097,2.5327,Stagnation,Spain
+Sharm El Sheikh,27.9158,34.3299,Stagnation,Egypt
+Varadero,23.1539,-81.25,Stagnation,Cuba
+Blackpool,53.8142,-3.05,Stagnation,UK
+Atlantic City,39.3643,-74.4229,Stagnation,USA
+Myrtle Beach,33.6891,-78.8867,Stagnation,USA
+Goa,15.2993,74.124,Stagnation,India
+Ayia Napa,34.9928,33.996,Stagnation,Cyprus
+Sihanoukville,10.6253,103.5234,Stagnation,Cambodia
+Mallorca,39.6953,3.0176,Stagnation,Spain
+Niagara Falls,43.0962,-79.0377,Stagnation,USA/Canada
+Macau,22.1987,113.5439,Stagnation,Macau
+Vang Vieng,18.924,102.4476,Stagnation,Laos
+Pokhara,28.2096,83.9856,Stagnation,Nepal
+Kuta,-8.7235,115.1767,Stagnation,Indonesia
+Agra,27.1767,78.0081,Stagnation,India
+Lloret de Mar,41.7,2.85,Stagnation,Spain
+Sousse,35.8256,10.636,Stagnation,Tunisia
+Eilat,29.5577,34.9519,Stagnation,Israel
+Surfers Paradise,-28.0027,153.429,Stagnation,Australia
+Malia,35.2833,25.4667,Stagnation,Greece
+Kavos,39.3869,20.0581,Stagnation,Greece
+Sanya,18.2528,109.5119,Stagnation,China
+Agadir,30.4278,-9.5981,Stagnation,Morocco
+Palma de Mallorca,39.5696,2.6502,Stagnation,Spain
+Manila,14.5995,120.9842,Stagnation,Philippines
+Boracay,11.9674,121.925,Stagnation,Philippines
+Jaipur,26.9124,75.7873,Stagnation,India
+Varanasi,25.3176,82.9739,Stagnation,India
+Angkor Wat,13.4125,103.8667,Stagnation,Cambodia
+Giza,29.9765,31.1313,Stagnation,Egypt
+Pompeii,40.746,14.4989,Stagnation,Italy
+Stonehenge,51.1789,-1.8262,Stagnation,UK
+Machu Picchu,-13.1631,-72.545,Stagnation,Peru
+Cozumel,20.422,-86.9223,Stagnation,Mexico
+Rotorua,-38.1368,176.2497,Stagnation,New Zealand
+Orlando,28.5383,-81.3792,Stagnation,USA
+Coney Island,40.5749,-73.985,Stagnation,USA
+Lourdes,43.095,-0.0463,Stagnation,France
+Venezia Lido,45.409,12.3727,Stagnation,Italy
+Ocho Rios,18.4074,-77.1031,Stagnation,Jamaica
+Sorrento,40.6263,14.3758,Stagnation,Italy
+Key West,24.5551,-81.78,Stagnation,USA
+Branson,36.6437,-93.2185,Stagnation,USA
+Brighton,50.8225,-0.1372,Stagnation,UK
+Sochi,43.6028,39.7342,Stagnation,Russia
+Atlantic City,39.3643,-74.4229,Stagnation,USA
+Darjeeling,27.036,88.2627,Stagnation,India
+Montego Bay,18.4762,-77.8939,Stagnation,Jamaica
+Shenzhen,22.5431,114.0579,Stagnation,China
+Cairo,30.0444,31.2357,Stagnation,Egypt
+Johannesburg,-26.2041,28.0473,Stagnation,South Africa
+Kuala Lumpur,3.139,101.6869,Stagnation,Malaysia
+Ho Chi Minh City,10.8231,106.6297,Stagnation,Vietnam
+Nassau,25.0443,-77.3504,Stagnation,Bahamas
+Antalya,36.8969,30.7133,Stagnation,Turkey
+Salou,41.077,1.1316,Stagnation,Spain
+Batumi,41.6168,41.6367,Stagnation,Georgia
+Ibiza,38.9089,1.4328,Stagnation,Spain
+Hvar,43.1729,16.4424,Stagnation,Croatia
+Bournemouth,50.7192,-1.8808,Stagnation,UK
+Split,43.5081,16.4402,Stagnation,Croatia
+Kotor,42.4247,18.7712,Stagnation,Montenegro
+Nessebar,42.66,27.7333,Stagnation,Bulgaria
+Golden Sands,43.2851,28.0418,Stagnation,Bulgaria
+Paphos,34.772,32.4297,Stagnation,Cyprus
+Costa del Sol,36.7202,-4.4203,Stagnation,Spain
+Banjul,13.4549,-16.579,Stagnation,Gambia
+Lima,-12.0464,-77.0428,Stagnation,Peru
+Rio de Janeiro,-22.9068,-43.1729,Stagnation,Brazil
+Copacabana,-22.9711,-43.1822,Stagnation,Brazil
+Phuket,7.9519,98.3381,Stagnation,Thailand
+Chiang Mai,18.7883,98.9853,Stagnation,Thailand
+Hue,16.4637,107.5909,Stagnation,Vietnam
+Mui Ne,10.9324,108.2416,Stagnation,Vietnam
+Boca Chica,18.45,-69.6,Stagnation,Dominican Republic
+Puerto Plata,19.7969,-70.6948,Stagnation,Dominican Republic
+Cartagena,10.391,-75.4794,Stagnation,Colombia
+San Andr�s Island,12.5847,-81.7006,Stagnation,Colombia
+Batangas,13.7565,121.0583,Stagnation,Philippines
+Port Dickson,2.5225,101.7963,Stagnation,Malaysia
+Puri,19.8135,85.8312,Stagnation,India
+Kovalam,8.4006,76.9789,Stagnation,India
+Manali,32.2396,77.1887,Stagnation,India
+Kangaroo Island,-35.7752,137.0768,Stagnation,Australia
+Alice Springs,-23.698,133.8807,Stagnation,Australia
+Hanoi,21.0278,105.8342,Stagnation,Vietnam
+Halong Bay,20.9101,107.1839,Stagnation,Vietnam
+Mount Everest Base Camp,28.0026,86.8528,Stagnation,Nepal
+Lake Louise,51.4254,-116.1773,Stagnation,Canada
+Banff,51.1784,-115.5708,Stagnation,Canada
+Whistler,50.1163,-122.9574,Stagnation,Canada
+Cannes,43.5528,7.0174,Stagnation,France
+Nice,43.7102,7.262,Stagnation,France
+Atlantic City,39.3643,-74.4229,Stagnation,USA
+Gatlinburg,35.7143,-83.5102,Stagnation,USA
+Branson,36.6437,-93.2185,Stagnation,USA
+Luray Caverns,38.6635,-78.483,Stagnation,USA
+Williamsburg,37.2707,-76.7075,Stagnation,USA
+Pigeon Forge,35.7884,-83.5543,Stagnation,USA
+Ocean City,38.3365,-75.0849,Stagnation,USA
+Galveston,29.3013,-94.7977,Stagnation,USA
+Myrtle Beach,33.6891,-78.8867,Stagnation,USA
+Atlantic City,39.3643,-74.4229,Stagnation,USA
+Bilbao,43.263,-2.935,Rejuvenation,Spain
+Detroit,42.3314,-83.0458,Rejuvenation,USA
+Glasgow,55.8642,-4.2518,Rejuvenation,UK
+Liverpool,53.4084,-2.9916,Rejuvenation,UK
+Cape Town,-33.9249,18.4241,Rejuvenation,South Africa
+Valencia,39.4699,-0.3763,Rejuvenation,Spain
+Porto,41.1579,-8.6291,Rejuvenation,Portugal
+Leeds,53.8008,-1.5491,Rejuvenation,UK
+Manchester,53.4808,-2.2426,Rejuvenation,UK
+Dublin,53.3498,-6.2603,Rejuvenation,Ireland
+Lisbon,38.7223,-9.1393,Rejuvenation,Portugal
+Sheffield,53.3811,-1.4701,Rejuvenation,UK
+Essen,51.4556,7.0116,Rejuvenation,Germany
+Leipzig,51.3397,12.3731,Rejuvenation,Germany
+Warsaw,52.2297,21.0122,Rejuvenation,Poland
+Krakow,50.0647,19.945,Rejuvenation,Poland
+Tallinn,59.437,24.7536,Rejuvenation,Estonia
+Riga,56.9496,24.1052,Rejuvenation,Latvia
+Vilnius,54.6872,25.2797,Rejuvenation,Lithuania
+Belfast,54.5973,-5.9301,Rejuvenation,UK
+Baltimore,39.2904,-76.6122,Rejuvenation,USA
+Cleveland,41.4993,-81.6944,Rejuvenation,USA
+Pittsburgh,40.4406,-79.9959,Rejuvenation,USA
+Rotterdam,51.9244,4.4777,Rejuvenation,Netherlands
+Hamburg,53.5511,9.9937,Rejuvenation,Germany
+Osaka,34.6937,135.5023,Rejuvenation,Japan
+Nagoya,35.1815,136.9066,Rejuvenation,Japan
+Fukuoka,33.5904,130.4017,Rejuvenation,Japan
+Hiroshima,34.3853,132.4553,Rejuvenation,Japan
+Sendai,38.2682,140.8694,Rejuvenation,Japan
+Belfast,54.5973,-5.9301,Rejuvenation,UK
+Lyon,45.764,4.8357,Rejuvenation,France
+Marseille,43.2965,5.3698,Rejuvenation,France
+Bordeaux,44.8378,-0.5792,Rejuvenation,France
+Toulouse,43.6047,1.4442,Rejuvenation,France
+Genoa,44.4056,8.9463,Rejuvenation,Italy
+Turin,45.0703,7.6869,Rejuvenation,Italy
+Naples,40.8518,14.2681,Rejuvenation,Italy
+Palermo,38.1157,13.3615,Rejuvenation,Italy
+Bilbao,43.263,-2.935,Rejuvenation,Spain
+Seville,37.3891,-5.9845,Rejuvenation,Spain
+Granada,37.1773,-3.5986,Rejuvenation,Spain
+Cordoba,37.8882,-4.7794,Rejuvenation,Spain
+Santiago de Compostela,42.8782,-8.5448,Rejuvenation,Spain
+Valparaiso,-33.0472,-71.6127,Rejuvenation,Chile
+Lima,-12.0464,-77.0428,Rejuvenation,Peru
+Quito,-0.1807,-78.4678,Rejuvenation,Ecuador
+Bogot�,4.711,-74.0721,Rejuvenation,Colombia
+Medell�n,6.2442,-75.5812,Rejuvenation,Colombia
+Guayaquil,-2.17,-79.9224,Rejuvenation,Ecuador
+S�o Paulo,-23.5505,-46.6333,Rejuvenation,Brazil
+Bras�lia,-15.7939,-47.8828,Rejuvenation,Brazil
+Addis Ababa,8.9806,38.7578,Rejuvenation,Ethiopia
+Kigali,-1.9706,30.1044,Rejuvenation,Rwanda
+Nairobi,-1.2921,36.8219,Rejuvenation,Kenya
+Dar es Salaam,-6.7924,39.2083,Rejuvenation,Tanzania
+Kampala,0.3476,32.5825,Rejuvenation,Uganda
+Hanoi,21.0278,105.8342,Rejuvenation,Vietnam
+Ho Chi Minh City,10.8231,106.6297,Rejuvenation,Vietnam
+Phnom Penh,11.5564,104.9282,Rejuvenation,Cambodia
+Yangon,16.8409,96.1735,Rejuvenation,Myanmar
+Thimphu,27.4712,89.6339,Rejuvenation,Bhutan
+Colombo,6.9271,79.8612,Rejuvenation,Sri Lanka
+Kathmandu,27.7172,85.324,Rejuvenation,Nepal
+Amman,31.9454,35.9284,Rejuvenation,Jordan
+Beirut,33.8938,35.5018,Rejuvenation,Lebanon
+Istanbul,41.0082,28.9784,Rejuvenation,Turkey
+Cairo,30.0444,31.2357,Rejuvenation,Egypt
+Fez,34.0331,-5.0005,Rejuvenation,Morocco
+Marrakech,31.6295,-7.9811,Rejuvenation,Morocco
+Casablanca,33.5731,-7.5898,Rejuvenation,Morocco
+Johannesburg,-26.2041,28.0473,Rejuvenation,South Africa
+Durban,-29.8587,31.0218,Rejuvenation,South Africa
+Maputo,-25.9692,32.5732,Rejuvenation,Mozambique
+Windhoek,-22.5609,17.0658,Rejuvenation,Namibia
+Gaborone,-24.6282,25.9231,Rejuvenation,Botswana
+Harare,-17.8252,31.0335,Rejuvenation,Zimbabwe
+Lusaka,-15.3875,28.3228,Rejuvenation,Zambia
+Luanda,-8.839,13.2894,Rejuvenation,Angola
+Libreville,0.4162,9.4673,Rejuvenation,Gabon
+Lagos,6.5244,3.3792,Rejuvenation,Nigeria
+Accra,5.6037,-0.187,Rejuvenation,Ghana
+Dakar,14.7167,-17.4677,Rejuvenation,Senegal
+Port Louis,-20.1609,57.5012,Rejuvenation,Mauritius
+Victoria,-4.6191,55.4513,Rejuvenation,Seychelles
+Antananarivo,-18.8792,47.5079,Rejuvenation,Madagascar
+Havana,23.1136,-82.3666,Rejuvenation,Cuba
+Santiago,-33.4489,-70.6693,Rejuvenation,Chile
+Belgrade,44.7866,20.4489,Rejuvenation,Serbia
+Sarajevo,43.8563,18.4131,Rejuvenation,Bosnia and Herzegovina
+Zagreb,45.815,15.9819,Rejuvenation,Croatia
+Ljubljana,46.0569,14.5058,Rejuvenation,Slovenia
+Pristina,42.6629,21.1655,Rejuvenation,Kosovo
+Skopje,41.9973,21.428,Rejuvenation,North Macedonia
+Tirana,41.3275,19.8187,Rejuvenation,Albania
+Podgorica,42.4304,19.2594,Rejuvenation,Montenegro

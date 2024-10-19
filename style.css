@@ -1,0 +1,11 @@
+/* Style for the map container */
+#map {
+    height: 500px;  /* This defines the height of the map */
+    width: 100%;    /* This makes the map take up the full width of the page */
+}
+
+/* Simple body styling */
+body {
+    font-family: Arial, sans-serif;  /* Just for clean, readable text */
+    margin: 20px;
+}

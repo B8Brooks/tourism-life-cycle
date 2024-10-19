@@ -1,0 +1,42 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TALC Tourism Tool</title>
+    
+    <!-- Leaflet.js CSS and JavaScript files -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    
+    <!-- Link to your own stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Add PapaParse from a CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+
+</head>
+
+<body>
+    <h1>Tourism Area Life Cycle Map</h1>
+
+    <!-- Search bar -->
+    <input type="text" id="searchInput" placeholder="Search by destination or country..." oninput="searchDestinations()">
+
+    <!-- Dropdown for filtering by phase -->
+    <label for="phaseFilter">Filter by Phase:</label>
+    <select id="phaseFilter" onchange="filterByPhase()">
+      <option value="all">All Phases</option>
+      <option value="exploration">Exploration</option>
+      <option value="involvement">Involvement</option>
+      <option value="development">Development</option>
+      <option value="consolidation">Consolidation</option>
+      <option value="stagnation">Stagnation</option>
+      <option value="rejuvenation">Rejuvenation</option>
+      <option value="decline">Decline</option>
+    </select>
+
+    <!-- The box where the map will go -->
+    <div id="map"></div>
+
+    <!-- Link to your script that will make the map work -->
+    <script src="script.js"></script>
+</body>
+
