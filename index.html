@@ -1,42 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TALC Tourism Tool</title>
-    
-    <!-- Leaflet.js CSS and JavaScript files -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-    
-    <!-- Link to your own stylesheet -->
-    <link rel="stylesheet" href="style.css">
-    <!-- Add PapaParse from a CDN -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <title>TALC Tourism Analyzer - Butler's Tourism Area Life Cycle</title>
 
+    <!-- Leaflet.js CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <!-- Chart.js for TALC curve visualization -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Custom stylesheet -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <h1>Tourism Area Life Cycle Map</h1>
+    <!-- Navigation Header -->
+    <header class="main-header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">&#127758;</span>
+                <h1>TALC Tourism Analyzer</h1>
+            </div>
+            <nav class="main-nav">
+                <a href="#theory" class="nav-link">Theory</a>
+                <a href="#map-section" class="nav-link">Explore Map</a>
+                <a href="#analysis" class="nav-link">Analysis</a>
+                <a href="#stages" class="nav-link">Stages</a>
+            </nav>
+        </div>
+    </header>
 
-    <!-- Search bar -->
-    <input type="text" id="searchInput" placeholder="Search by destination or country..." oninput="searchDestinations()">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Understanding Tourism Destination Evolution</h2>
+            <p>Explore Richard Butler's Tourism Area Life Cycle (TALC) theory through interactive mapping and analysis of destinations worldwide.</p>
+            <a href="#map-section" class="cta-button">Explore Destinations</a>
+        </div>
+        <div class="hero-curve">
+            <canvas id="heroChart"></canvas>
+        </div>
+    </section>
 
-    <!-- Dropdown for filtering by phase -->
-    <label for="phaseFilter">Filter by Phase:</label>
-    <select id="phaseFilter" onchange="filterByPhase()">
-      <option value="all">All Phases</option>
-      <option value="exploration">Exploration</option>
-      <option value="involvement">Involvement</option>
-      <option value="development">Development</option>
-      <option value="consolidation">Consolidation</option>
-      <option value="stagnation">Stagnation</option>
-      <option value="rejuvenation">Rejuvenation</option>
-      <option value="decline">Decline</option>
-    </select>
+    <!-- Theory Section -->
+    <section id="theory" class="theory-section">
+        <div class="container">
+            <h2 class="section-title">Butler's Tourism Area Life Cycle Theory</h2>
+            <div class="theory-intro">
+                <p>Developed by Richard Butler in 1980, the <strong>Tourism Area Life Cycle (TALC)</strong> model describes how tourist destinations evolve over time through distinct stages. Understanding these stages helps planners, investors, and communities make informed decisions about sustainable tourism development.</p>
+            </div>
 
-    <!-- The box where the map will go -->
-    <div id="map"></div>
+            <div class="talc-curve-container">
+                <canvas id="talcCurve"></canvas>
+            </div>
 
-    <!-- Link to your script that will make the map work -->
+            <div class="theory-details">
+                <div class="theory-card">
+                    <h3>Key Concepts</h3>
+                    <ul>
+                        <li><strong>Carrying Capacity:</strong> The maximum number of tourists a destination can sustain without degradation</li>
+                        <li><strong>Critical Range:</strong> The threshold where destinations must choose between decline or rejuvenation</li>
+                        <li><strong>Sustainable Development:</strong> Balancing growth with environmental and cultural preservation</li>
+                    </ul>
+                </div>
+                <div class="theory-card">
+                    <h3>Applications</h3>
+                    <ul>
+                        <li>Strategic planning for tourism development</li>
+                        <li>Identifying intervention points for sustainability</li>
+                        <li>Comparing destinations at different lifecycle stages</li>
+                        <li>Predicting future tourism trends and challenges</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stages Section -->
+    <section id="stages" class="stages-section">
+        <div class="container">
+            <h2 class="section-title">The Seven Stages of TALC</h2>
+            <div class="stages-grid">
+                <div class="stage-card exploration">
+                    <div class="stage-icon">&#127967;</div>
+                    <h3>1. Exploration</h3>
+                    <div class="stage-indicator"></div>
+                    <p>Small numbers of adventurous tourists visit the area. There is little tourist infrastructure, and visitors have significant contact with locals. The destination's natural and cultural authenticity is preserved.</p>
+                    <ul class="stage-characteristics">
+                        <li>Few visitors seeking adventure</li>
+                        <li>Minimal tourism infrastructure</li>
+                        <li>High authenticity</li>
+                        <li>Limited economic impact</li>
+                    </ul>
+                </div>
+
+                <div class="stage-card involvement">
+                    <div class="stage-icon">&#129309;</div>
+                    <h3>2. Involvement</h3>
+                    <div class="stage-indicator"></div>
+                    <p>Local residents begin to provide facilities for tourists. A tourism season may emerge, and advertising begins. The community starts recognizing tourism's economic potential.</p>
+                    <ul class="stage-characteristics">
+                        <li>Local entrepreneurship emerges</li>
+                        <li>Basic facilities developed</li>
+                        <li>Tourism seasons appear</li>
+                        <li>Community involvement grows</li>
+                    </ul>
+                </div>
+
+                <div class="stage-card development">
+                    <div class="stage-icon">&#127959;</div>
+                    <h3>3. Development</h3>
+                    <div class="stage-indicator"></div>
+                    <p>Large numbers of tourists arrive during peak periods. External organizations invest heavily. Modern facilities replace local ones, and the character of the area changes significantly.</p>
+                    <ul class="stage-characteristics">
+                        <li>Rapid visitor growth</li>
+                        <li>External investment influx</li>
+                        <li>Major infrastructure development</li>
+                        <li>Marketing intensifies</li>
+                    </ul>
+                </div>
+
+                <div class="stage-card consolidation">
+                    <div class="stage-icon">&#127970;</div>
+                    <h3>4. Consolidation</h3>
+                    <div class="stage-indicator"></div>
+                    <p>Tourism becomes a major part of the local economy. Growth rates decline but total numbers remain high. Major franchises and chains dominate. Some opposition from residents may emerge.</p>
+                    <ul class="stage-characteristics">
+                        <li>Tourism dominates economy</li>
+                        <li>Growth rate slows</li>
+                        <li>Corporate presence strong</li>
+                        <li>Local tension may arise</li>
+                    </ul>
+                </div>
+
+                <div class="stage-card stagnation">
+                    <div class="stage-icon">&#9940;</div>
+                    <h3>5. Stagnation</h3>
+                    <div class="stage-indicator"></div>
+                    <p>Peak visitor numbers are reached. The destination is no longer fashionable and relies on repeat visitors and conventions. Environmental, social, and economic problems become evident.</p>
+                    <ul class="stage-characteristics">
+                        <li>Carrying capacity reached</li>
+                        <li>No longer trendy</li>
+                        <li>Environmental stress visible</li>
+                        <li>Heavy reliance on repeats</li>
+                    </ul>
+                </div>
+
+                <div class="stage-card decline">
+                    <div class="stage-icon">&#128308;</div>
+                    <h3>6. Decline</h3>
+                    <div class="stage-indicator"></div>
+                    <p>Visitors are lost to newer destinations. Tourist facilities may be converted for other uses. The area may become a tourism slum or exit tourism altogether.</p>
+                    <ul class="stage-characteristics">
+                        <li>Visitor numbers drop</li>
+                        <li>Facilities repurposed</li>
+                        <li>Economic downturn</li>
+                        <li>May exit tourism market</li>
+                    </ul>
+                </div>
+
+                <div class="stage-card rejuvenation">
+                    <div class="stage-icon">&#127793;</div>
+                    <h3>7. Rejuvenation</h3>
+                    <div class="stage-indicator"></div>
+                    <p>Through significant changes, new attractions, or repositioning, the destination experiences renewed growth. This requires substantial investment and often a complete reimagining of the tourism product.</p>
+                    <ul class="stage-characteristics">
+                        <li>Strategic reinvention</li>
+                        <li>New attractions developed</li>
+                        <li>Rebranding efforts</li>
+                        <li>Sustainable practices adopted</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section id="map-section" class="map-section">
+        <div class="container-full">
+            <h2 class="section-title">Global TALC Destination Map</h2>
+
+            <div class="map-controls">
+                <div class="control-group">
+                    <label for="searchInput">Search Destination</label>
+                    <input type="text" id="searchInput" placeholder="Search by destination or country..." oninput="searchDestinations()">
+                </div>
+
+                <div class="control-group">
+                    <label for="phaseFilter">Filter by Stage</label>
+                    <select id="phaseFilter" onchange="filterByPhase()">
+                        <option value="all">All Stages</option>
+                        <option value="exploration">Exploration</option>
+                        <option value="involvement">Involvement</option>
+                        <option value="development">Development</option>
+                        <option value="consolidation">Consolidation</option>
+                        <option value="stagnation">Stagnation</option>
+                        <option value="decline">Decline</option>
+                        <option value="rejuvenation">Rejuvenation</option>
+                    </select>
+                </div>
+
+                <div class="control-group">
+                    <button id="resetFilters" onclick="resetFilters()">Reset Filters</button>
+                </div>
+            </div>
+
+            <div class="map-container">
+                <div id="map"></div>
+
+                <div class="map-legend">
+                    <h4>TALC Stages Legend</h4>
+                    <div class="legend-items">
+                        <div class="legend-item" onclick="quickFilter('exploration')">
+                            <span class="legend-color exploration"></span>
+                            <span>Exploration</span>
+                        </div>
+                        <div class="legend-item" onclick="quickFilter('involvement')">
+                            <span class="legend-color involvement"></span>
+                            <span>Involvement</span>
+                        </div>
+                        <div class="legend-item" onclick="quickFilter('development')">
+                            <span class="legend-color development"></span>
+                            <span>Development</span>
+                        </div>
+                        <div class="legend-item" onclick="quickFilter('consolidation')">
+                            <span class="legend-color consolidation"></span>
+                            <span>Consolidation</span>
+                        </div>
+                        <div class="legend-item" onclick="quickFilter('stagnation')">
+                            <span class="legend-color stagnation"></span>
+                            <span>Stagnation</span>
+                        </div>
+                        <div class="legend-item" onclick="quickFilter('decline')">
+                            <span class="legend-color decline"></span>
+                            <span>Decline</span>
+                        </div>
+                        <div class="legend-item" onclick="quickFilter('rejuvenation')">
+                            <span class="legend-color rejuvenation"></span>
+                            <span>Rejuvenation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="map-stats" id="mapStats">
+                <div class="stat-card">
+                    <span class="stat-number" id="totalDestinations">0</span>
+                    <span class="stat-label">Total Destinations</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" id="visibleDestinations">0</span>
+                    <span class="stat-label">Currently Shown</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" id="countriesCount">0</span>
+                    <span class="stat-label">Countries</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Analysis Section -->
+    <section id="analysis" class="analysis-section">
+        <div class="container">
+            <h2 class="section-title">TALC Distribution Analysis</h2>
+
+            <div class="analysis-grid">
+                <div class="chart-container">
+                    <h3>Destinations by Stage</h3>
+                    <canvas id="stageDistribution"></canvas>
+                </div>
+
+                <div class="chart-container">
+                    <h3>Regional Distribution</h3>
+                    <canvas id="regionalDistribution"></canvas>
+                </div>
+            </div>
+
+            <div class="insights-container">
+                <h3>Key Insights</h3>
+                <div class="insights-grid" id="insightsGrid">
+                    <!-- Populated dynamically -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destination Details Modal -->
+    <div id="destinationModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <div id="modalBody">
+                <!-- Populated dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About TALC</h4>
+                    <p>The Tourism Area Life Cycle model was developed by Richard W. Butler in 1980 and remains one of the most influential frameworks for understanding tourism destination development.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>References</h4>
+                    <ul>
+                        <li>Butler, R.W. (1980). The concept of a tourist area cycle of evolution</li>
+                        <li>Canadian Geographer, 24(1), 5-12</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Data Sources</h4>
+                    <p>Destination classifications are based on tourism industry reports, academic research, and observable development indicators.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>TALC Tourism Analyzer - An Educational Tool for Tourism Studies</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
     <script src="script.js"></script>
 </body>
-
+</html>
