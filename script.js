@@ -273,7 +273,7 @@ function showDestinationDetails(name, country, phase, lat, lng, type, parent) {
                     <h4>Locations in ${name}:</h4>
                     <ul>
                         ${children.map(c => `
-                            <li>
+                            <li class="clickable-location" onclick="showDestinationDetails('${c.displayName.replace(/'/g, "\\'")}', '${c.displayCountry.replace(/'/g, "\\'")}', '${c.displayPhase}', ${c.latitude}, ${c.longitude}, '${c.type}', '${c.parent.replace(/'/g, "\\'")}')">
                                 <span class="child-name">${c.displayName}</span>
                                 <span class="child-phase ${c.phase}">${c.displayPhase}</span>
                             </li>
