@@ -1,4 +1,4 @@
-name,latitude,longitude,phase,country,type,parent,justification
+name,latitude,longitude,phase,country,type,parent,justification,stage_1980,stage_1990,stage_2000,stage_2010,stage_2020
 Socotra Island,12.4634,53.823,Exploration,Yemen,location,,
 Raja Ampat Islands,-0.2346,130.517,Exploration,Indonesia,location,,
 Svalbard,78.2232,15.6469,Exploration,Norway,location,,
@@ -207,7 +207,7 @@ Danang,16.0544,108.2022,Development,Vietnam,location,,
 Punta Cana,18.5601,-68.3725,Development,Dominican Republic,location,,
 San Juan,18.4655,-66.1057,Development,Puerto Rico,location,,
 Canc�n,21.1619,-86.8515,Development,Mexico,location,,
-Thailand,15.87,100.9925,Consolidation,Thailand,location,,
+Thailand,15.87,100.9925,Consolidation,Thailand,location,,,involvement,development,development,consolidation,consolidation
 Bali,-8.3405,115.092,Consolidation,Indonesia,location,,
 Canc�n,21.1619,-86.8515,Consolidation,Mexico,location,,
 Prague,50.0755,14.4378,Consolidation,Czech Republic,location,,
@@ -1019,55 +1019,55 @@ Pristina,42.6629,21.1655,Rejuvenation,Kosovo,location,,
 Skopje,41.9973,21.428,Rejuvenation,North Macedonia,location,,
 Tirana,41.3275,19.8187,Rejuvenation,Albania,location,,Capital saw 26% visitor growth in Dec 2024. 45% of tourists visit. International hotel brands arriving. Cultural tourism growing. Strong Development stage.
 Podgorica,42.4304,19.2594,Rejuvenation,Montenegro,location,,
-Belize,17.1899,-88.4976,Development,Belize,country,,"Record 21% tourism growth in 2024 with 562,405 overnight visitors. $250M airport expansion underway. Tourism accounts for 46% of GDP. Strong external investment but infrastructure still developing. Transitioning from Involvement to mature Development."
+Belize,17.1899,-88.4976,Development,Belize,country,,"Record 21% tourism growth in 2024 with 562,405 overnight visitors. $250M airport expansion underway. Tourism accounts for 46% of GDP. Strong external investment but infrastructure still developing. Transitioning from Involvement to mature Development.",exploration,exploration,involvement,involvement,development
 Ambergris Caye,17.9319,-87.9680,Consolidation,Belize,location,Belize,"Belize's most developed tourism destination with 70+ hotels, mostly foreign-owned. Tourism began in 1970s and now dominates the island. Facing infrastructure strain from success - water/sanitation issues affecting reef. Shows classic Consolidation characteristics."
 Caye Caulker,17.7347,-88.0250,Development,Belize,location,Belize,Experiencing rapid tourism growth while maintaining laid-back character. New developments increasing but still preserves authentic Caribbean feel. Infrastructure improving with new ferry services. Mid-Development stage with strong growth trajectory.
 Hopkins,16.8166,-88.4000,Involvement,Belize,location,Belize,"Small Garifuna village transitioning to tourism economy. Community-based tourism model with local ownership. Basic facilities emerging, cultural authenticity preserved. Classic Involvement stage characteristics."
 Placencia,16.5166,-88.3666,Development,Belize,location,Belize,Major tourism development zone with new resorts and real estate investment. Featured in Belize Tourism Board development plans. Growing rapidly but still building infrastructure. Active Development stage.
 San Ignacio,17.1561,-89.0714,Involvement,Belize,location,Belize,Gateway to Mayan ruins and jungle adventures. Local operators dominate tourism services. Tourism season emerging with growing visitor numbers. Infrastructure basic but improving. Involvement stage.
 Toledo District,16.2000,-89.0000,Exploration,Belize,location,Belize,Remote southern region with minimal tourism infrastructure. Pristine rainforests and Mayan villages. Attracts adventurous ecotourists. Very limited facilities. True Exploration stage destination.
-Maldives,3.2028,73.2207,Consolidation,Maldives,country,,"Welcomed 2.25M tourists in 2025, 9.8% increase. 183 luxury resorts with 45,289 beds. Tourism is primary economic driver. Mature market with global brand presence. Environmental carrying capacity concerns emerging."
+Maldives,3.2028,73.2207,Consolidation,Maldives,country,,"Welcomed 2.25M tourists in 2025, 9.8% increase. 183 luxury resorts with 45,289 beds. Tourism is primary economic driver. Mature market with global brand presence. Environmental carrying capacity concerns emerging.",exploration,involvement,development,consolidation,consolidation
 Male,4.1755,73.5093,Consolidation,Maldives,location,Maldives,Capital city handles 74% of arrivals through main airport. Fully developed tourism infrastructure. Major hotel chains present. Gateway hub reaching capacity limits. Clear Consolidation characteristics.
 Maafushi,3.9408,73.4871,Development,Maldives,location,Maldives,Pioneer local island for guesthouse tourism since 2009 liberalization. Over 50 guesthouses now operating. Rapid development transforming fishing village. Strong Development stage growth.
 Thulusdhoo,4.3740,73.6480,Involvement,Maldives,location,Maldives,Emerging surf tourism destination on local island. Small but growing guesthouse sector. Local entrepreneurs beginning tourism services. Early Involvement stage.
 Fuvahmulah,0.2995,73.4244,Exploration,Maldives,location,Maldives,Remote southern atoll with unique geography. Emerging diving destination for tiger sharks. Very limited tourist facilities. Adventurous travelers only. Exploration stage.
-Malta,35.9375,14.3754,Consolidation,Malta,country,,1.2M tourists in peak year for tiny island nation. UNESCO sites and beach tourism. Major cruise destination. Tourism dominates economy at 27% of GDP. Mature market facing capacity limits.
+Malta,35.9375,14.3754,Consolidation,Malta,country,,1.2M tourists in peak year for tiny island nation. UNESCO sites and beach tourism. Major cruise destination. Tourism dominates economy at 27% of GDP. Mature market facing capacity limits.,involvement,development,development,consolidation,consolidation
 Valletta,35.8989,14.5146,Consolidation,Malta,location,Malta,UNESCO capital city. Dense tourism development. Cruise passengers overwhelm small streets. Historic sites at capacity. Consolidation stage.
 Gozo,36.0440,14.2510,Development,Malta,location,Malta,Quieter sister island with growing tourism. Diving and rural tourism focus. Less developed than Malta. Development stage.
 Mdina,35.8867,14.4028,Consolidation,Malta,location,Malta,Ancient walled city limiting visitor numbers. Day-trip destination from Valletta. Preserved but tourist-focused. Consolidation characteristics.
 Comino,36.0125,14.3361,Involvement,Malta,location,Malta,"Small island famous for Blue Lagoon. Day trips only, no accommodation. Seasonal overcrowding issues emerging. Involvement stage."
-Iceland,64.9631,-19.0208,Development,Iceland,country,,2.3M visitors in 2024 (6x the population). Tourism is 8.5% of GDP. Implementing overtourism measures including surge pricing and conservation fees. Sustainable tourism focus. Development with Consolidation pressures.
+Iceland,64.9631,-19.0208,Development,Iceland,country,,2.3M visitors in 2024 (6x the population). Tourism is 8.5% of GDP. Implementing overtourism measures including surge pricing and conservation fees. Sustainable tourism focus. Development with Consolidation pressures.,exploration,exploration,involvement,development,development
 Reykjavik,64.1466,-21.9426,Consolidation,Iceland,location,Iceland,Severe overtourism pressures. Airbnb density displacing residents. Tourism-oriented businesses replacing local shops. Government implementing visitor management. Classic Consolidation/Stagnation characteristics.
 Blue Lagoon,63.8803,-22.4495,Consolidation,Iceland,location,Iceland,Iceland's most visited attraction with strict visitor quotas. Pre-booking required. Premium pricing strategy. Environmental management intensive. Peak Consolidation.
 Akureyri,65.6835,-18.0878,Development,Iceland,location,Iceland,Northern capital growing as alternative to Reykjavik. Cruise ship calls increasing. Tourism infrastructure expanding. Year-round destination strategy. Development stage.
 Westfjords,65.9197,-22.3960,Exploration,Iceland,location,Iceland,Remote peninsula with minimal infrastructure. Attracts adventurous travelers seeking isolation. Very limited services. Long travel times. Exploration stage.
 Eastfjords,64.9000,-14.0000,Exploration,Iceland,location,Iceland,Least visited region of Iceland. Sparse population and facilities. Emerging hiking and nature tourism. Very early stage development. Exploration characteristics.
-Albania,41.1533,20.1683,Development,Albania,country,,"11.7M visitors in 2024, 80% increase vs 2019. One of world's fastest-growing destinations. €2.3B tourism revenue. New Llogara Tunnel improving access. Rapid Development but infrastructure still catching up."
+Albania,41.1533,20.1683,Development,Albania,country,,"11.7M visitors in 2024, 80% increase vs 2019. One of world's fastest-growing destinations. €2.3B tourism revenue. New Llogara Tunnel improving access. Rapid Development but infrastructure still catching up.",,exploration,exploration,involvement,development
 Tirana,41.3275,19.8187,Development,Albania,location,Albania,Capital saw 26% visitor growth in Dec 2024. 45% of tourists visit. International hotel brands arriving. Cultural tourism growing. Strong Development stage.
 Sarande,39.8661,20.0050,Development,Albania,location,Albania,Major Riviera destination facing overcrowding. Year-round tourism now. Infrastructure strained by growth. Transitioning toward Consolidation with carrying capacity concerns.
 Ksamil,39.7833,20.0000,Involvement,Albania,location,Albania,Beach destination near Greek border. Rapid recent development. Local infrastructure struggling to keep pace. Popular with regional tourists. Late Involvement/early Development.
 Berat,40.7058,19.9522,Involvement,Albania,location,Albania,UNESCO World Heritage Ottoman town. Heritage tourism growing steadily. Local guides and guesthouses emerging. Authentic character preserved. Involvement stage.
 Gjirokaster,40.0758,20.1389,Involvement,Albania,location,Albania,UNESCO stone city with growing cultural tourism. World Bank heritage tourism investment. Local community engagement increasing. Involvement stage characteristics.
 Theth,42.3833,19.7833,Exploration,Albania,location,Albania,"Remote Albanian Alps village. Attracts hikers on Peaks of Balkans trail. Very basic facilities, no paved road access. Adventure travelers only. Exploration stage."
-Slovenia,46.1512,14.9955,Development,Slovenia,country,,4M+ visitors annually. Sustainable tourism leader. Ljubljana European Green Capital. Well-developed infrastructure. Strong Development stage.
+Slovenia,46.1512,14.9955,Development,Slovenia,country,,4M+ visitors annually. Sustainable tourism leader. Ljubljana European Green Capital. Well-developed infrastructure. Strong Development stage.,involvement,involvement,development,development,development
 Ljubljana,46.0569,14.5058,Development,Slovenia,location,Slovenia,Capital with strong tourism growth. Pedestrianized center. International hotel brands. Year-round destination. Development stage.
 Lake Bled,46.3683,14.1146,Consolidation,Slovenia,location,Slovenia,Slovenia's most famous destination. Over 1M visitors annually. Overtourism concerns emerging. Visitor management systems in place. Consolidation stage.
 Piran,45.5283,13.5681,Development,Slovenia,location,Slovenia,Venetian coastal town. Growing tourism pressure. Cruise day-trippers increasing. Infrastructure adequate. Development stage.
 Bovec,46.3381,13.5519,Involvement,Slovenia,location,Slovenia,Adventure tourism hub in Julian Alps. Small but growing sector. Local operators dominant. Involvement stage.
 Skocjan Caves,45.6636,14.0011,Involvement,Slovenia,location,Slovenia,UNESCO World Heritage site. Guided tours only with capacity limits. Growing visitor numbers. Involvement/Development transition.
-Georgia,42.3154,43.3569,Development,Georgia,country,,7.7M visitors in 2024. Fast-growing destination. Wine tourism and cultural heritage focus. Infrastructure developing rapidly. Development stage.
+Georgia,42.3154,43.3569,Development,Georgia,country,,7.7M visitors in 2024. Fast-growing destination. Wine tourism and cultural heritage focus. Infrastructure developing rapidly. Development stage.,,exploration,involvement,involvement,development
 Tbilisi,41.7151,44.8271,Development,Georgia,location,Georgia,Capital with booming tourism. International hotels arriving. Nightlife and food tourism. Strong growth trajectory. Development stage.
 Batumi,41.6168,41.6367,Development,Georgia,location,Georgia,Black Sea resort city. Major casino tourism. High-rise development. Beach tourism dominant. Development stage.
 Kazbegi,42.6617,44.6408,Involvement,Georgia,location,Georgia,Mountain destination growing rapidly. Basic infrastructure improving. Adventure tourism focus. Involvement stage.
 Svaneti,43.0500,42.9167,Exploration,Georgia,location,Georgia,Remote mountain region. UNESCO towers. Very basic facilities. Adventurous travelers. Exploration stage.
 Kakheti,41.6500,45.7500,Involvement,Georgia,location,Georgia,Wine region developing agrotourism. Small guesthouses and wineries. Local entrepreneurship. Involvement stage.
-Montenegro,42.7087,19.3744,Development,Montenegro,country,,2.5M visitors annually for small nation. Coastal tourism dominant. Real estate development pressure. Development/Consolidation mix.
+Montenegro,42.7087,19.3744,Development,Montenegro,country,,2.5M visitors annually for small nation. Coastal tourism dominant. Real estate development pressure. Development/Consolidation mix.,exploration,involvement,involvement,development,development
 Kotor,42.4247,18.7712,Consolidation,Montenegro,location,Montenegro,UNESCO Bay town. Cruise ship overcrowding severe. Resident concerns growing. Carrying capacity reached. Consolidation stage.
 Budva,42.2911,18.8403,Consolidation,Montenegro,location,Montenegro,Major beach resort. Dense hotel development. Package tourism dominant. Mature market. Consolidation stage.
 Durmitor,43.1500,19.0167,Involvement,Montenegro,location,Montenegro,Mountain national park. Hiking and rafting tourism. Basic facilities. Growing slowly. Involvement stage.
 Ulcinj,41.9297,19.2086,Involvement,Montenegro,location,Montenegro,Southern beach town. Less developed than north. Albanian influence. Growing interest. Involvement stage.
 Perast,42.4869,18.6983,Development,Montenegro,location,Montenegro,Tiny Bay of Kotor village. Day-trip destination. Very limited capacity. Charming but fragile. Development stage.
-Rwanda,1.9403,29.8739,Development,Rwanda,country,,"Tourism 2nd largest forex earner. Gorilla permits $1,500. High-value, low-volume model. Sustainable development focus. Development stage."
+Rwanda,1.9403,29.8739,Development,Rwanda,country,,"Tourism 2nd largest forex earner. Gorilla permits $1,500. High-value, low-volume model. Sustainable development focus. Development stage.",,exploration,exploration,involvement,development
 Kigali,-1.9706,30.1044,Development,Rwanda,location,Rwanda,"Clean, modern capital. Conference tourism growing. International hotels present. Strong development. Development stage."
 Volcanoes National Park,-1.4833,29.5333,Development,Rwanda,location,Rwanda,Famous gorilla trekking. Limited permits protect habitat. High-end lodges. Sustainable model. Development stage.
 Nyungwe Forest,-2.4833,29.2500,Involvement,Rwanda,location,Rwanda,Emerging chimp trekking destination. Basic facilities improving. Conservation focus. Involvement stage.

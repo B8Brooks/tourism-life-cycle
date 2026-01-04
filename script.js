@@ -29,6 +29,18 @@ let allDestinations = [];
 let addedDestinations = new Set();
 let stageDistributionChart = null;
 let regionalDistributionChart = null;
+let currentYear = 2024;
+let watchList = [];
+
+// Year to column mapping for historical data
+const yearToColumn = {
+    1980: 'stage_1980',
+    1990: 'stage_1990',
+    2000: 'stage_2000',
+    2010: 'stage_2010',
+    2020: 'stage_2020',
+    2024: 'phase' // Current stage
+};
 
 // Initialize the application
 document.addEventListener('DOMContentLoaded', function() {
@@ -36,6 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
     loadDestinations();
     initHeroChart();
     initTALCCurve();
+    loadWatchList();
 });
 
 // Initialize Leaflet map
@@ -175,7 +188,14 @@ function processDestinations(data) {
             longitude: lng,
             type: type,
             parent: parent.toLowerCase(),
-            justification: justification
+            justification: justification,
+            // Historical stage data
+            stage_1980: (dest.stage_1980 || '').toLowerCase().trim(),
+            stage_1990: (dest.stage_1990 || '').toLowerCase().trim(),
+            stage_2000: (dest.stage_2000 || '').toLowerCase().trim(),
+            stage_2010: (dest.stage_2010 || '').toLowerCase().trim(),
+            stage_2020: (dest.stage_2020 || '').toLowerCase().trim(),
+            hasHistoricalData: !!(dest.stage_1980 || dest.stage_1990 || dest.stage_2000 || dest.stage_2010 || dest.stage_2020)
         };
 
         allMarkers.push(destData);
@@ -271,6 +291,11 @@ function showDestinationDetails(name, country, phase, lat, lng, type, parent, ju
     const typeLabel = type === 'country' ? '<span class="type-badge country">Country-Level</span>' : '<span class="type-badge location">Location</span>';
     const parentInfo = parent ? `<p class="modal-parent">Part of: <strong>${parent}</strong></p>` : '';
 
+    // Check if in watch list
+    const inWatchList = isInWatchList(name, type);
+    const watchBtnClass = inWatchList ? 'active' : '';
+    const watchBtnText = inWatchList ? 'Remove from Watch List' : 'Add to Watch List';
+
     // Build justification section if available
     const justificationSection = decodedJustification ? `
         <div class="modal-justification">
@@ -305,6 +330,9 @@ function showDestinationDetails(name, country, phase, lat, lng, type, parent, ju
     modalBody.innerHTML = `
         <div class="modal-header">
             <h2>${name}</h2>
+            <button class="watch-list-star ${watchBtnClass}" onclick="addToWatchList('${name.replace(/'/g, "\\'")}', '${country.replace(/'/g, "\\'")}', '${phase}', ${lat}, ${lng}, '${type}')" title="${watchBtnText}">
+                &#9733;
+            </button>
             <p class="country">${country}</p>
             ${typeLabel}
             ${parentInfo}
@@ -809,3 +837,173 @@ window.addEventListener('scroll', function() {
         header.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
     }
 });
+
+// ===== TIME SLIDER FUNCTIONALITY =====
+
+// Update time slider and refresh markers
+function updateTimeSlider(year) {
+    currentYear = parseInt(year);
+    document.getElementById('selectedYear').textContent = year === '2024' ? 'Now' : year;
+
+    // Update label highlighting
+    document.querySelectorAll('.time-slider-labels span').forEach(label => {
+        const labelYear = parseInt(label.dataset.year);
+        label.classList.toggle('active', labelYear === currentYear || (currentYear === 2024 && label.dataset.year === '2024'));
+    });
+
+    // Update all markers based on the selected year
+    updateMarkersForYear(currentYear);
+}
+
+// Update markers to show historical stage for the selected year
+function updateMarkersForYear(year) {
+    allMarkers.forEach(dest => {
+        let stageForYear;
+
+        if (year === 2024) {
+            stageForYear = dest.phase;
+        } else {
+            // Get the stage for the selected year
+            const columnName = yearToColumn[year];
+            stageForYear = dest[columnName];
+
+            // If no historical data, fall back to earliest available or hide
+            if (!stageForYear && dest.hasHistoricalData) {
+                // Find the closest available year
+                const years = [1980, 1990, 2000, 2010, 2020];
+                for (let i = years.indexOf(year); i < years.length; i++) {
+                    const col = yearToColumn[years[i]];
+                    if (dest[col]) {
+                        stageForYear = dest[col];
+                        break;
+                    }
+                }
+            }
+
+            // If still no stage, use current or mark as not existing
+            if (!stageForYear) {
+                stageForYear = dest.phase; // Default to current
+            }
+        }
+
+        // Update marker color based on the stage for this year
+        const color = stageColors[stageForYear] || '#95a5a6';
+        dest.marker.setStyle({
+            fillColor: color
+        });
+
+        // Store current displayed stage for filtering
+        dest.currentDisplayPhase = stageForYear;
+    });
+
+    // Re-apply filters with new stage data
+    applyFilters();
+}
+
+// ===== WATCH LIST FUNCTIONALITY =====
+
+// Load watch list from localStorage
+function loadWatchList() {
+    const stored = localStorage.getItem('talcWatchList');
+    if (stored) {
+        watchList = JSON.parse(stored);
+    }
+    updateWatchListUI();
+}
+
+// Save watch list to localStorage
+function saveWatchList() {
+    localStorage.setItem('talcWatchList', JSON.stringify(watchList));
+    updateWatchListUI();
+}
+
+// Toggle watch list panel visibility
+function toggleWatchList() {
+    const panel = document.getElementById('watchListPanel');
+    panel.classList.toggle('hidden');
+}
+
+// Add destination to watch list
+function addToWatchList(name, country, phase, lat, lng, type) {
+    const id = `${name.toLowerCase()}_${type}`;
+
+    // Check if already in watch list
+    if (watchList.find(item => item.id === id)) {
+        removeFromWatchList(id);
+        return;
+    }
+
+    watchList.push({
+        id: id,
+        name: name,
+        country: country,
+        phase: phase,
+        latitude: lat,
+        longitude: lng,
+        type: type,
+        addedAt: new Date().toISOString()
+    });
+
+    saveWatchList();
+}
+
+// Remove destination from watch list
+function removeFromWatchList(id) {
+    watchList = watchList.filter(item => item.id !== id);
+    saveWatchList();
+}
+
+// Clear entire watch list
+function clearWatchList() {
+    if (confirm('Are you sure you want to clear your entire watch list?')) {
+        watchList = [];
+        saveWatchList();
+    }
+}
+
+// Check if destination is in watch list
+function isInWatchList(name, type) {
+    const id = `${name.toLowerCase()}_${type}`;
+    return watchList.find(item => item.id === id);
+}
+
+// Update watch list UI
+function updateWatchListUI() {
+    const countEl = document.getElementById('watchListCount');
+    const contentEl = document.getElementById('watchListContent');
+
+    countEl.textContent = watchList.length;
+
+    if (watchList.length === 0) {
+        contentEl.innerHTML = '<p class="watch-list-empty">No destinations in your watch list yet. Click the star icon on any destination to add it.</p>';
+        return;
+    }
+
+    contentEl.innerHTML = watchList.map(item => `
+        <div class="watch-list-item">
+            <div class="watch-item-info" onclick="zoomToDestination(${item.latitude}, ${item.longitude}, '${item.name.replace(/'/g, "\\'")}')">
+                <span class="watch-item-name">${item.name}</span>
+                <span class="watch-item-country">${item.country}</span>
+                <span class="watch-item-phase ${item.phase.toLowerCase()}">${item.phase}</span>
+            </div>
+            <button class="watch-item-remove" onclick="removeFromWatchList('${item.id}')" title="Remove from watch list">
+                &times;
+            </button>
+        </div>
+    `).join('');
+}
+
+// Zoom to destination on map
+function zoomToDestination(lat, lng, name) {
+    map.setView([lat, lng], 10);
+
+    // Find and open the popup for this destination
+    allMarkers.forEach(dest => {
+        if (dest.displayName === name) {
+            dest.marker.openPopup();
+        }
+    });
+
+    // Close watch list panel
+    document.getElementById('watchListPanel').classList.add('hidden');
+}

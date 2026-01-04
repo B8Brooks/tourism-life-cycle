@@ -214,6 +214,33 @@
                 <div class="control-group">
                     <button id="resetFilters" onclick="resetFilters()">Reset Filters</button>
                 </div>
+
+                <div class="control-group watch-list-btn">
+                    <button id="toggleWatchList" onclick="toggleWatchList()">
+                        <span class="watch-icon">&#9733;</span>
+                        Watch List (<span id="watchListCount">0</span>)
+                    </button>
+                </div>
+            </div>
+
+            <!-- Time Slider -->
+            <div class="time-slider-container">
+                <div class="time-slider-header">
+                    <h4>Historical Timeline</h4>
+                    <span class="time-slider-year" id="selectedYear">2024</span>
+                </div>
+                <div class="time-slider-track">
+                    <input type="range" id="timeSlider" min="1980" max="2024" value="2024" step="10" oninput="updateTimeSlider(this.value)">
+                    <div class="time-slider-labels">
+                        <span data-year="1980">1980</span>
+                        <span data-year="1990">1990</span>
+                        <span data-year="2000">2000</span>
+                        <span data-year="2010">2010</span>
+                        <span data-year="2020">2020</span>
+                        <span data-year="2024">Now</span>
+                    </div>
+                </div>
+                <p class="time-slider-info">Slide to see how destinations evolved through TALC stages over time</p>
             </div>
 
             <div class="map-container">
@@ -250,6 +277,20 @@
                             <span class="legend-color rejuvenation"></span>
                             <span>Rejuvenation</span>
                         </div>
+                    </div>
+                </div>
+
+                <!-- Watch List Panel -->
+                <div id="watchListPanel" class="watch-list-panel hidden">
+                    <div class="watch-list-header">
+                        <h4>&#9733; Your Watch List</h4>
+                        <button class="close-watch-list" onclick="toggleWatchList()">&times;</button>
+                    </div>
+                    <div class="watch-list-content" id="watchListContent">
+                        <p class="watch-list-empty">No destinations in your watch list yet. Click the star icon on any destination to add it.</p>
+                    </div>
+                    <div class="watch-list-footer">
+                        <button onclick="clearWatchList()" class="clear-watch-list">Clear All</button>
                     </div>
                 </div>
             </div>
