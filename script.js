@@ -120,6 +120,7 @@ function processDestinations(data) {
         const country = dest.country || 'Unknown';
         const type = dest.type || 'location';
         const parent = dest.parent || '';
+        const justification = dest.justification || '';
 
         if (isNaN(lat) || isNaN(lng)) return;
 
@@ -138,6 +139,9 @@ function processDestinations(data) {
             }
         }
 
+        // Escape justification for use in onclick
+        const escapedJustification = justification.replace(/'/g, "\\'").replace(/"/g, '&quot;');
+
         const popupContent = `
             <div class="popup-content">
                 <h3>${dest.name} ${typeLabel}</h3>
@@ -145,7 +149,7 @@ function processDestinations(data) {
                 ${parentInfo}
                 <span class="popup-phase ${phase.toLowerCase()}">${phase} Stage</span>
                 ${locationCount}
-                <p class="popup-details" onclick="showDestinationDetails('${dest.name.replace(/'/g, "\\'")}', '${country.replace(/'/g, "\\'")}', '${phase}', ${lat}, ${lng}, '${type}', '${parent.replace(/'/g, "\\'")}')">View Details</p>
+                <p class="popup-details" onclick="showDestinationDetails('${dest.name.replace(/'/g, "\\'")}', '${country.replace(/'/g, "\\'")}', '${phase}', ${lat}, ${lng}, '${type}', '${parent.replace(/'/g, "\\'")}', '${escapedJustification}')">View Details</p>
             </div>
         `;
 
@@ -170,7 +174,8 @@ function processDestinations(data) {
             latitude: lat,
             longitude: lng,
             type: type,
-            parent: parent.toLowerCase()
+            parent: parent.toLowerCase(),
+            justification: justification
         };
 
         allMarkers.push(destData);
@@ -254,14 +259,25 @@ function updateStats() {
 }
 
 // Show destination details in modal
-function showDestinationDetails(name, country, phase, lat, lng, type, parent) {
+function showDestinationDetails(name, country, phase, lat, lng, type, parent, justification = '') {
     const modal = document.getElementById('destinationModal');
     const modalBody = document.getElementById('modalBody');
     const phaseLower = phase.toLowerCase();
     const description = stageDescriptions[phaseLower] || 'Information not available for this stage.';
 
+    // Decode HTML entities in justification
+    const decodedJustification = justification.replace(/&quot;/g, '"').replace(/&#39;/g, "'");
+
     const typeLabel = type === 'country' ? '<span class="type-badge country">Country-Level</span>' : '<span class="type-badge location">Location</span>';
     const parentInfo = parent ? `<p class="modal-parent">Part of: <strong>${parent}</strong></p>` : '';
+
+    // Build justification section if available
+    const justificationSection = decodedJustification ? `
+        <div class="modal-justification">
+            <h4>Why ${phase} Stage?</h4>
+            <p>${decodedJustification}</p>
+        </div>
+    ` : '';
 
     // Find child locations if this is a country
     let childLocations = '';
@@ -272,12 +288,14 @@ function showDestinationDetails(name, country, phase, lat, lng, type, parent) {
                 <div class="modal-children">
                     <h4>Locations in ${name}:</h4>
                     <ul>
-                        ${children.map(c => `
-                            <li class="clickable-location" onclick="showDestinationDetails('${c.displayName.replace(/'/g, "\\'")}', '${c.displayCountry.replace(/'/g, "\\'")}', '${c.displayPhase}', ${c.latitude}, ${c.longitude}, '${c.type}', '${c.parent.replace(/'/g, "\\'")}')">
+                        ${children.map(c => {
+                            const childJustification = (c.justification || '').replace(/'/g, "\\'").replace(/"/g, '&quot;');
+                            return `
+                            <li class="clickable-location" onclick="showDestinationDetails('${c.displayName.replace(/'/g, "\\'")}', '${c.displayCountry.replace(/'/g, "\\'")}', '${c.displayPhase}', ${c.latitude}, ${c.longitude}, '${c.type}', '${c.parent.replace(/'/g, "\\'")}', '${childJustification}')">
                                 <span class="child-name">${c.displayName}</span>
                                 <span class="child-phase ${c.phase}">${c.displayPhase}</span>
                             </li>
-                        `).join('')}
+                        `}).join('')}
                     </ul>
                 </div>
             `;
@@ -295,6 +313,7 @@ function showDestinationDetails(name, country, phase, lat, lng, type, parent) {
             <span class="stage-badge ${phaseLower}">${phase} Stage</span>
             <p>${description}</p>
         </div>
+        ${justificationSection}
         ${childLocations}
         <div class="modal-coordinates">
             <strong>Coordinates:</strong> ${lat.toFixed(4)}, ${lng.toFixed(4)}

@@ -1085,6 +1085,45 @@ ul {
     margin-top: 10px;
 }
 
+/* Modal justification section */
+.modal-justification {
+    margin-top: 25px;
+    padding: 20px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 12px;
+    border-left: 4px solid var(--accent-color);
+}
+
+.modal-justification h4 {
+    color: var(--primary-color);
+    font-size: 1rem;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.modal-justification h4::before {
+    content: '?';
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    background: var(--accent-color);
+    color: white;
+    border-radius: 50%;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.modal-justification p {
+    color: var(--text-color);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin: 0;
+}
+
 /* Modal children list (locations within a country) */
 .modal-children {
     margin-top: 25px;
