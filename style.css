@@ -1038,3 +1038,119 @@ ul {
 .mt-20 { margin-top: 20px; }
 .mb-20 { margin-bottom: 20px; }
 .hidden { display: none !important; }
+
+/* ===== Hierarchy Styles (Country vs Location) ===== */
+
+/* Popup parent info */
+.popup-content .popup-parent {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    margin: 5px 0;
+}
+
+.popup-content .popup-locations {
+    font-size: 0.8rem;
+    color: var(--accent-color);
+    margin-top: 8px;
+    font-weight: 600;
+}
+
+/* Type badges in modal */
+.type-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 10px;
+}
+
+.type-badge.country {
+    background: var(--accent-color);
+    color: white;
+}
+
+.type-badge.location {
+    background: var(--background-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}
+
+/* Modal parent info */
+.modal-parent {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    margin-top: 10px;
+}
+
+/* Modal children list (locations within a country) */
+.modal-children {
+    margin-top: 25px;
+    padding: 20px;
+    background: var(--background-color);
+    border-radius: 12px;
+}
+
+.modal-children h4 {
+    margin-bottom: 15px;
+    color: var(--primary-color);
+    font-size: 1rem;
+}
+
+.modal-children ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.modal-children li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.modal-children li:last-child {
+    border-bottom: none;
+}
+
+.modal-children .child-name {
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.modal-children .child-phase {
+    padding: 4px 10px;
+    border-radius: 10px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: white;
+}
+
+.modal-children .child-phase.exploration { background: var(--exploration-color); }
+.modal-children .child-phase.involvement { background: var(--involvement-color); color: #333; }
+.modal-children .child-phase.development { background: var(--development-color); }
+.modal-children .child-phase.consolidation { background: var(--consolidation-color); }
+.modal-children .child-phase.stagnation { background: var(--stagnation-color); }
+.modal-children .child-phase.decline { background: var(--decline-color); }
+.modal-children .child-phase.rejuvenation { background: var(--rejuvenation-color); }
+
+/* Country markers - pulsing effect */
+.country-marker {
+    animation: countryPulse 2s infinite;
+}
+
+@keyframes countryPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(52, 152, 219, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(52, 152, 219, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(52, 152, 219, 0);
+    }
+}

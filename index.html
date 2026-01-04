@@ -190,7 +190,7 @@
 
                 <div class="control-group">
                     <label for="phaseFilter">Filter by Stage</label>
-                    <select id="phaseFilter" onchange="filterByPhase()">
+                    <select id="phaseFilter" onchange="applyFilters()">
                         <option value="all">All Stages</option>
                         <option value="exploration">Exploration</option>
                         <option value="involvement">Involvement</option>
@@ -199,6 +199,15 @@
                         <option value="stagnation">Stagnation</option>
                         <option value="decline">Decline</option>
                         <option value="rejuvenation">Rejuvenation</option>
+                    </select>
+                </div>
+
+                <div class="control-group">
+                    <label for="typeFilter">Show</label>
+                    <select id="typeFilter" onchange="applyFilters()">
+                        <option value="all">All Destinations</option>
+                        <option value="country">Countries Only</option>
+                        <option value="location">Locations Only</option>
                     </select>
                 </div>
 

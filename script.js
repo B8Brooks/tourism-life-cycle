@@ -49,17 +49,33 @@ function initMap() {
 }
 
 // Create circle markers with stage-specific colors
-function createMarker(lat, lng, phase) {
+// Countries get larger markers with a border ring
+function createMarker(lat, lng, phase, type) {
     const color = stageColors[phase.toLowerCase()] || '#95a5a6';
+    const isCountry = type === 'country';
 
-    return L.circleMarker([lat, lng], {
-        radius: 8,
-        fillColor: color,
-        color: '#fff',
-        weight: 2,
-        opacity: 1,
-        fillOpacity: 0.8
-    });
+    if (isCountry) {
+        // Country marker: larger with double ring
+        return L.circleMarker([lat, lng], {
+            radius: 12,
+            fillColor: color,
+            color: '#fff',
+            weight: 3,
+            opacity: 1,
+            fillOpacity: 0.9,
+            className: 'country-marker'
+        });
+    } else {
+        // Location marker: smaller standard circle
+        return L.circleMarker([lat, lng], {
+            radius: 7,
+            fillColor: color,
+            color: '#fff',
+            weight: 2,
+            opacity: 1,
+            fillOpacity: 0.8
+        });
+    }
 }
 
 // Load and parse destinations from CSV
@@ -82,10 +98,18 @@ function loadDestinations() {
 
 // Process and display destinations
 function processDestinations(data) {
+    // First pass: collect all country entries for parent lookup
+    const countryData = {};
+    data.forEach(dest => {
+        if (dest.type === 'country') {
+            countryData[dest.name] = dest;
+        }
+    });
+
     data.forEach(dest => {
         if (!dest.name || !dest.latitude || !dest.longitude || !dest.phase) return;
 
-        const uniqueKey = dest.name.toLowerCase().trim();
+        const uniqueKey = dest.name.toLowerCase().trim() + '_' + (dest.type || 'location');
 
         if (addedDestinations.has(uniqueKey)) return;
         addedDestinations.add(uniqueKey);
@@ -94,22 +118,46 @@ function processDestinations(data) {
         const lng = parseFloat(dest.longitude);
         const phase = dest.phase.trim();
         const country = dest.country || 'Unknown';
+        const type = dest.type || 'location';
+        const parent = dest.parent || '';
 
         if (isNaN(lat) || isNaN(lng)) return;
 
-        const marker = createMarker(lat, lng, phase);
+        const marker = createMarker(lat, lng, phase, type);
+
+        // Build popup content
+        const typeLabel = type === 'country' ? '(Country)' : '';
+        const parentInfo = parent ? `<p class="popup-parent">Part of: <strong>${parent}</strong></p>` : '';
+
+        // For countries, show how many locations are within
+        let locationCount = '';
+        if (type === 'country') {
+            const childCount = data.filter(d => d.parent === dest.name).length;
+            if (childCount > 0) {
+                locationCount = `<p class="popup-locations">${childCount} locations tracked</p>`;
+            }
+        }
 
         const popupContent = `
             <div class="popup-content">
-                <h3>${dest.name}</h3>
+                <h3>${dest.name} ${typeLabel}</h3>
                 <p class="popup-country">${country}</p>
+                ${parentInfo}
                 <span class="popup-phase ${phase.toLowerCase()}">${phase} Stage</span>
-                <p class="popup-details" onclick="showDestinationDetails('${dest.name.replace(/'/g, "\\'")}', '${country.replace(/'/g, "\\'")}', '${phase}', ${lat}, ${lng})">View Details</p>
+                ${locationCount}
+                <p class="popup-details" onclick="showDestinationDetails('${dest.name.replace(/'/g, "\\'")}', '${country.replace(/'/g, "\\'")}', '${phase}', ${lat}, ${lng}, '${type}', '${parent.replace(/'/g, "\\'")}')">View Details</p>
             </div>
         `;
 
         marker.bindPopup(popupContent);
         marker.addTo(map);
+
+        // For country markers, add click to zoom
+        if (type === 'country') {
+            marker.on('click', function(e) {
+                map.setView([lat, lng], 7);
+            });
+        }
 
         const destData = {
             marker: marker,
@@ -120,7 +168,9 @@ function processDestinations(data) {
             country: country.toLowerCase(),
             displayCountry: country,
             latitude: lat,
-            longitude: lng
+            longitude: lng,
+            type: type,
+            parent: parent.toLowerCase()
         };
 
         allMarkers.push(destData);
@@ -132,17 +182,21 @@ function processDestinations(data) {
     generateInsights();
 }
 
-// Search destinations
-function searchDestinations() {
-    const input = document.getElementById('searchInput').value.toLowerCase();
+// Unified filter function
+function applyFilters() {
+    const searchInput = document.getElementById('searchInput').value.toLowerCase();
     const selectedPhase = document.getElementById('phaseFilter').value.toLowerCase();
+    const selectedType = document.getElementById('typeFilter').value.toLowerCase();
     let visibleCount = 0;
 
     allMarkers.forEach(dest => {
-        const matchesSearch = dest.name.includes(input) || dest.country.includes(input);
+        const matchesSearch = dest.name.includes(searchInput) ||
+                              dest.country.includes(searchInput) ||
+                              dest.parent.includes(searchInput);
         const matchesPhase = selectedPhase === 'all' || dest.phase === selectedPhase;
+        const matchesType = selectedType === 'all' || dest.type === selectedType;
 
-        if (matchesSearch && matchesPhase) {
+        if (matchesSearch && matchesPhase && matchesType) {
             if (!map.hasLayer(dest.marker)) {
                 dest.marker.addTo(map);
             }
@@ -155,22 +209,28 @@ function searchDestinations() {
     document.getElementById('visibleDestinations').textContent = visibleCount;
 }
 
-// Filter by phase
+// Search destinations (calls unified filter)
+function searchDestinations() {
+    applyFilters();
+}
+
+// Filter by phase (calls unified filter)
 function filterByPhase() {
-    searchDestinations();
+    applyFilters();
 }
 
 // Quick filter from legend click
 function quickFilter(phase) {
     document.getElementById('phaseFilter').value = phase;
     document.getElementById('searchInput').value = '';
-    filterByPhase();
+    applyFilters();
 }
 
 // Reset all filters
 function resetFilters() {
     document.getElementById('searchInput').value = '';
     document.getElementById('phaseFilter').value = 'all';
+    document.getElementById('typeFilter').value = 'all';
 
     allMarkers.forEach(dest => {
         if (!map.hasLayer(dest.marker)) {
@@ -179,12 +239,14 @@ function resetFilters() {
     });
 
     document.getElementById('visibleDestinations').textContent = allMarkers.length;
+    map.setView([20, 0], 2);
 }
 
 // Update statistics
 function updateStats() {
     const totalDestinations = allMarkers.length;
     const countries = new Set(allMarkers.map(d => d.country));
+    const countryEntries = allMarkers.filter(d => d.type === 'country').length;
 
     document.getElementById('totalDestinations').textContent = totalDestinations;
     document.getElementById('visibleDestinations').textContent = totalDestinations;
@@ -192,21 +254,48 @@ function updateStats() {
 }
 
 // Show destination details in modal
-function showDestinationDetails(name, country, phase, lat, lng) {
+function showDestinationDetails(name, country, phase, lat, lng, type, parent) {
     const modal = document.getElementById('destinationModal');
     const modalBody = document.getElementById('modalBody');
     const phaseLower = phase.toLowerCase();
     const description = stageDescriptions[phaseLower] || 'Information not available for this stage.';
 
+    const typeLabel = type === 'country' ? '<span class="type-badge country">Country-Level</span>' : '<span class="type-badge location">Location</span>';
+    const parentInfo = parent ? `<p class="modal-parent">Part of: <strong>${parent}</strong></p>` : '';
+
+    // Find child locations if this is a country
+    let childLocations = '';
+    if (type === 'country') {
+        const children = allDestinations.filter(d => d.parent.toLowerCase() === name.toLowerCase());
+        if (children.length > 0) {
+            childLocations = `
+                <div class="modal-children">
+                    <h4>Locations in ${name}:</h4>
+                    <ul>
+                        ${children.map(c => `
+                            <li>
+                                <span class="child-name">${c.displayName}</span>
+                                <span class="child-phase ${c.phase}">${c.displayPhase}</span>
+                            </li>
+                        `).join('')}
+                    </ul>
+                </div>
+            `;
+        }
+    }
+
     modalBody.innerHTML = `
         <div class="modal-header">
             <h2>${name}</h2>
             <p class="country">${country}</p>
+            ${typeLabel}
+            ${parentInfo}
         </div>
         <div class="modal-stage">
             <span class="stage-badge ${phaseLower}">${phase} Stage</span>
             <p>${description}</p>
         </div>
+        ${childLocations}
         <div class="modal-coordinates">
             <strong>Coordinates:</strong> ${lat.toFixed(4)}, ${lng.toFixed(4)}
         </div>
@@ -511,14 +600,15 @@ function initRegionalDistributionChart() {
 
     // Define regions based on country
     const regionMapping = {
-        'europe': ['france', 'germany', 'italy', 'spain', 'portugal', 'uk', 'united kingdom', 'netherlands', 'belgium', 'austria', 'switzerland', 'greece', 'czech republic', 'poland', 'hungary', 'croatia', 'ireland', 'denmark', 'sweden', 'norway', 'finland', 'russia', 'ukraine', 'romania', 'bulgaria', 'serbia', 'montenegro', 'albania', 'north macedonia', 'bosnia and herzegovina', 'slovenia', 'slovakia', 'latvia', 'lithuania', 'estonia', 'malta', 'cyprus', 'iceland', 'monaco', 'luxembourg', 'liechtenstein', 'andorra', 'san marino', 'vatican city', 'moldova', 'belarus', 'kosovo'],
+        'europe': ['france', 'germany', 'italy', 'spain', 'portugal', 'uk', 'united kingdom', 'netherlands', 'belgium', 'austria', 'switzerland', 'greece', 'czech republic', 'poland', 'hungary', 'croatia', 'ireland', 'denmark', 'sweden', 'norway', 'finland', 'russia', 'ukraine', 'romania', 'bulgaria', 'serbia', 'montenegro', 'albania', 'north macedonia', 'bosnia and herzegovina', 'slovenia', 'slovakia', 'latvia', 'lithuania', 'estonia', 'malta', 'cyprus', 'iceland', 'monaco', 'luxembourg', 'liechtenstein', 'andorra', 'san marino', 'vatican city', 'moldova', 'belarus', 'kosovo', 'georgia'],
         'asia': ['china', 'japan', 'south korea', 'india', 'thailand', 'vietnam', 'indonesia', 'malaysia', 'philippines', 'singapore', 'hong kong', 'taiwan', 'myanmar', 'cambodia', 'laos', 'nepal', 'sri lanka', 'bangladesh', 'pakistan', 'mongolia', 'bhutan', 'maldives', 'brunei', 'timor-leste', 'macau'],
         'middle east': ['uae', 'united arab emirates', 'qatar', 'saudi arabia', 'oman', 'bahrain', 'kuwait', 'israel', 'jordan', 'lebanon', 'turkey', 'iran', 'iraq', 'syria', 'yemen', 'palestine'],
         'africa': ['south africa', 'egypt', 'morocco', 'kenya', 'tanzania', 'ethiopia', 'nigeria', 'ghana', 'senegal', 'tunisia', 'madagascar', 'namibia', 'botswana', 'zimbabwe', 'zambia', 'mozambique', 'rwanda', 'uganda', 'mauritius', 'seychelles'],
         'north america': ['usa', 'united states', 'canada', 'mexico', 'puerto rico'],
+        'central america': ['belize', 'guatemala', 'honduras', 'el salvador', 'nicaragua', 'costa rica', 'panama'],
         'south america': ['brazil', 'argentina', 'chile', 'peru', 'colombia', 'ecuador', 'bolivia', 'uruguay', 'paraguay', 'venezuela', 'guyana', 'suriname'],
         'oceania': ['australia', 'new zealand', 'fiji', 'papua new guinea', 'samoa', 'tonga', 'vanuatu', 'solomon islands', 'palau', 'micronesia'],
-        'caribbean': ['jamaica', 'cuba', 'dominican republic', 'bahamas', 'barbados', 'trinidad and tobago', 'haiti', 'aruba', 'cayman islands', 'bermuda', 'antigua', 'st. lucia', 'grenada', 'belize', 'panama', 'costa rica', 'nicaragua', 'honduras', 'guatemala', 'el salvador']
+        'caribbean': ['jamaica', 'cuba', 'dominican republic', 'bahamas', 'barbados', 'trinidad and tobago', 'haiti', 'aruba', 'cayman islands', 'bermuda', 'antigua', 'st. lucia', 'grenada']
     };
 
     const regionCounts = {};
@@ -556,7 +646,7 @@ function initRegionalDistributionChart() {
 
     const barColors = [
         '#3498db', '#e74c3c', '#2ecc71', '#f1c40f',
-        '#9b59b6', '#e67e22', '#1abc9c', '#34495e', '#95a5a6'
+        '#9b59b6', '#e67e22', '#1abc9c', '#34495e', '#95a5a6', '#16a085'
     ];
 
     if (regionalDistributionChart) {
@@ -637,8 +727,9 @@ function generateInsights() {
     const matureStage = (stageCounts.consolidation + stageCounts.stagnation);
     const matureStagePercent = ((matureStage / allDestinations.length) * 100).toFixed(1);
 
-    // Rejuvenation rate
-    const rejuvenationPercent = ((stageCounts.rejuvenation / allDestinations.length) * 100).toFixed(1);
+    // Country vs location count
+    const countryCount = allDestinations.filter(d => d.type === 'country').length;
+    const locationCount = allDestinations.filter(d => d.type === 'location').length;
 
     const insights = [
         {
@@ -657,9 +748,9 @@ function generateInsights() {
             description: 'In Consolidation or Stagnation stages'
         },
         {
-            title: 'Rejuvenation Rate',
-            value: `${rejuvenationPercent}%`,
-            description: 'Destinations successfully reinventing'
+            title: 'Data Coverage',
+            value: `${countryCount} countries`,
+            description: `${locationCount} specific locations tracked`
         }
     ];
 
