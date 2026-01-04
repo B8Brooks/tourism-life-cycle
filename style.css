@@ -1109,8 +1109,16 @@ ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 0;
+    padding: 10px 12px;
+    margin: 0 -12px;
     border-bottom: 1px solid var(--border-color);
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.modal-children li:hover {
+    background-color: rgba(52, 152, 219, 0.1);
 }
 
 .modal-children li:last-child {
@@ -1118,8 +1126,15 @@ ul {
 }
 
 .modal-children .child-name {
-    font-weight: 500;
-    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.modal-children .child-name::before {
+    content: '>';
+    color: var(--accent-color);
+    font-weight: bold;
 }
 
 .modal-children .child-phase {
