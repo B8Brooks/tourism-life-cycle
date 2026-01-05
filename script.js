@@ -327,6 +327,9 @@ function showDestinationDetails(name, country, phase, lat, lng, type, parent, ju
         }
     }
 
+    // Get similar destinations
+    const similarSection = getSimilarDestinationsHTML(name, phase, country, type);
+
     modalBody.innerHTML = `
         <div class="modal-header">
             <h2>${name}</h2>
@@ -343,6 +346,7 @@ function showDestinationDetails(name, country, phase, lat, lng, type, parent, ju
         </div>
         ${justificationSection}
         ${childLocations}
+        ${similarSection}
         <div class="modal-coordinates">
             <strong>Coordinates:</strong> ${lat.toFixed(4)}, ${lng.toFixed(4)}
         </div>
@@ -1007,3 +1011,344 @@ function zoomToDestination(lat, lng, name) {
     // Close watch list panel
     document.getElementById('watchListPanel').classList.add('hidden');
 }
+
+// ===== EXPLORE SIMILAR FUNCTIONALITY =====
+
+// Find similar destinations based on stage, region, or type
+function findSimilarDestinations(name, phase, country, type, limit = 5) {
+    const phaseLower = phase.toLowerCase();
+    const countryLower = country.toLowerCase();
+
+    // Score destinations by similarity
+    const scored = allDestinations
+        .filter(d => d.displayName !== name) // Exclude current destination
+        .map(d => {
+            let score = 0;
+
+            // Same stage = 3 points
+            if (d.phase === phaseLower) score += 3;
+
+            // Same country = 2 points
+            if (d.country === countryLower) score += 2;
+
+            // Same type = 1 point
+            if (d.type === type) score += 1;
+
+            // Adjacent stages get partial credit
+            const stageOrder = ['exploration', 'involvement', 'development', 'consolidation', 'stagnation', 'decline', 'rejuvenation'];
+            const currentIndex = stageOrder.indexOf(phaseLower);
+            const destIndex = stageOrder.indexOf(d.phase);
+            if (Math.abs(currentIndex - destIndex) === 1) score += 1;
+
+            return { ...d, similarityScore: score };
+        })
+        .filter(d => d.similarityScore > 0)
+        .sort((a, b) => b.similarityScore - a.similarityScore)
+        .slice(0, limit);
+
+    return scored;
+}
+
+// Generate HTML for similar destinations
+function getSimilarDestinationsHTML(name, phase, country, type) {
+    const similar = findSimilarDestinations(name, phase, country, type);
+
+    if (similar.length === 0) {
+        return '';
+    }
+
+    return `
+        <div class="modal-similar">
+            <h4>Explore Similar Destinations</h4>
+            <div class="similar-destinations-list">
+                ${similar.map(d => {
+                    const escapedJustification = (d.justification || '').replace(/'/g, "\\'").replace(/"/g, '&quot;');
+                    return `
+                        <div class="similar-item" onclick="showDestinationDetails('${d.displayName.replace(/'/g, "\\'")}', '${d.displayCountry.replace(/'/g, "\\'")}', '${d.displayPhase}', ${d.latitude}, ${d.longitude}, '${d.type}', '${(d.parent || '').replace(/'/g, "\\'")}', '${escapedJustification}')">
+                            <span class="similar-name">${d.displayName}</span>
+                            <span class="similar-country">${d.displayCountry}</span>
+                            <span class="similar-phase ${d.phase}">${d.displayPhase}</span>
+                        </div>
+                    `;
+                }).join('')}
+            </div>
+        </div>
+    `;
+}
+
+// ===== CASE STUDIES FUNCTIONALITY =====
+
+const caseStudies = {
+    albania: {
+        title: "Albania's Tourism Boom",
+        subtitle: "From Hidden Gem to Europe's Hottest Destination",
+        stage: "Development",
+        timeline: [
+            { year: "Pre-2000", stage: "Exploration", description: "Post-communist Albania largely closed to tourism. Few adventurous travelers visited." },
+            { year: "2000-2010", stage: "Exploration", description: "Gradual opening. Backpackers discover Albanian Riviera. Infrastructure minimal." },
+            { year: "2010-2019", stage: "Involvement", description: "Local entrepreneurs build guesthouses. Saranda and Ksamil gain attention. Tourism season emerges." },
+            { year: "2019-2024", stage: "Development", description: "Explosive growth. 11.7M visitors in 2024, 80% increase vs 2019. International attention soars." }
+        ],
+        content: `
+            <h3>The Transformation</h3>
+            <p>Albania's tourism story is one of Europe's most remarkable recent transformations. Once virtually closed to outside visitors during its communist era, the country has emerged as the continent's fastest-growing destination.</p>
+
+            <h3>Key Development Indicators</h3>
+            <ul>
+                <li><strong>11.7 million visitors</strong> in 2024 - a number that seems impossible for a country of just 2.8 million people</li>
+                <li><strong>€2.3 billion</strong> in tourism revenue</li>
+                <li><strong>80% growth</strong> compared to pre-pandemic 2019 levels</li>
+                <li>New <strong>Llogara Tunnel</strong> dramatically improved access to the Albanian Riviera</li>
+            </ul>
+
+            <h3>TALC Analysis</h3>
+            <p>Albania demonstrates classic Development stage characteristics: rapid external investment, infrastructure expansion, and a fundamental shift from local to international tourism. The Albanian Riviera, once known only to a handful of backpackers, now features international hotel brands and direct flights from across Europe.</p>
+
+            <h3>Challenges Ahead</h3>
+            <p>Albania's rapid growth brings risks. Saranda already shows signs of overdevelopment, while pristine areas like Theth face pressure to develop. The country stands at a crossroads: will it follow the path of Croatia (successful but expensive) or risk the overtourism of Venice?</p>
+
+            <h3>Lessons for TALC Theory</h3>
+            <p>Albania shows how social media and low-cost carriers can accelerate the TALC progression dramatically. What took decades in traditional destinations is happening in years.</p>
+        `,
+        mapCoords: [41.1533, 20.1683]
+    },
+    venice: {
+        title: "Venice's Overtourism Crisis",
+        subtitle: "When Tourism Destroys What It Loves",
+        stage: "Decline",
+        timeline: [
+            { year: "1950s-1970s", stage: "Consolidation", description: "Venice established as premier cultural destination. Mass tourism begins." },
+            { year: "1980s-2000s", stage: "Stagnation", description: "Tourism dominates economy. Local population begins decline. Day-trippers increase." },
+            { year: "2000s-2020", stage: "Decline", description: "Population drops below 55,000. Cruise ships bring 30,000 daily visitors. UNESCO threatens delisting." },
+            { year: "2020-Present", stage: "Attempted Rejuvenation", description: "Entry fees introduced. Cruise ships partially banned. Population continues falling." }
+        ],
+        content: `
+            <h3>A City Transformed</h3>
+            <p>Venice represents perhaps the most dramatic cautionary tale in tourism development. A city that inspired generations of artists and travelers has been fundamentally altered by the industry it helped create.</p>
+
+            <h3>The Numbers Tell the Story</h3>
+            <ul>
+                <li><strong>Population collapse:</strong> From 175,000 in 1951 to under 50,000 today</li>
+                <li><strong>30+ million annual visitors</strong> in a city built for a fraction of that</li>
+                <li><strong>70% of housing</strong> converted to tourist accommodation</li>
+                <li>Local shops replaced by <strong>souvenir stores and fast food</strong></li>
+            </ul>
+
+            <h3>TALC Analysis</h3>
+            <p>Venice exemplifies the Decline stage where tourism has fundamentally degraded the destination's appeal and livability. The authentic Venetian experience that attracted visitors no longer exists - the city has become a stage set populated primarily by tourists.</p>
+
+            <h3>Attempted Interventions</h3>
+            <p>Venice has tried various measures: entry fees for day-trippers (€5), cruise ship restrictions, and penalties for anti-social behavior. But these address symptoms, not causes. The economic incentives still favor tourism over residents.</p>
+
+            <h3>Lessons for TALC Theory</h3>
+            <p>Venice shows that Decline doesn't mean fewer tourists - it means the death of what made the destination special. Butler's original theory focused on visitor numbers, but Venice proves that qualitative decline can occur even with high visitation.</p>
+        `,
+        mapCoords: [45.4408, 12.3155]
+    },
+    iceland: {
+        title: "Iceland's Sustainable Approach",
+        subtitle: "Managing Growth Before It's Too Late",
+        stage: "Development",
+        timeline: [
+            { year: "1990s", stage: "Exploration", description: "Iceland known mainly to nature enthusiasts and adventure travelers." },
+            { year: "2000-2010", stage: "Involvement", description: "Icelandair's stopover program introduces casual travelers. Infrastructure develops." },
+            { year: "2010-2016", stage: "Development", description: "Post-financial crisis push into tourism. Visitor numbers explode from 500K to 1.8M." },
+            { year: "2016-Present", stage: "Development with Pressures", description: "2.3M visitors annually. Government implements management measures." }
+        ],
+        content: `
+            <h3>Managing Success</h3>
+            <p>Iceland's tourism story is unique: a country that recognized the risks of rapid development and acted before reaching Consolidation's problems. With 2.3 million annual visitors for a population of 375,000, Iceland has perhaps the highest tourist-to-resident ratio of any country.</p>
+
+            <h3>Proactive Management</h3>
+            <ul>
+                <li><strong>Surge pricing</strong> at popular attractions during peak times</li>
+                <li><strong>Conservation fees</strong> to fund environmental protection</li>
+                <li><strong>Visitor caps</strong> at fragile natural sites</li>
+                <li><strong>Infrastructure investment</strong> in dispersed attractions</li>
+            </ul>
+
+            <h3>TALC Analysis</h3>
+            <p>Iceland sits firmly in Development but shows awareness of Consolidation risks. The government's explicit goal is sustainable tourism, not maximum tourism. This represents a deliberate choice to manage TALC progression rather than let market forces dictate outcomes.</p>
+
+            <h3>Regional Variation</h3>
+            <p>Within Iceland, different regions show different stages: Reykjavik approaches Consolidation with overtourism pressures, while the Westfjords remain in Exploration with minimal infrastructure.</p>
+
+            <h3>Lessons for TALC Theory</h3>
+            <p>Iceland demonstrates that TALC progression isn't inevitable - policy choices matter. However, it also shows the difficulty of balancing economic benefits with preservation, especially for a small economy dependent on tourism revenue.</p>
+        `,
+        mapCoords: [64.9631, -19.0208]
+    },
+    maldives: {
+        title: "Maldives: Luxury at Scale",
+        subtitle: "High-Value Tourism Meets Environmental Limits",
+        stage: "Consolidation",
+        timeline: [
+            { year: "1970s-1980s", stage: "Exploration", description: "First resorts open. Exclusive, expensive destination for wealthy travelers." },
+            { year: "1990s", stage: "Involvement", description: "More resorts developed. 'One island, one resort' model established." },
+            { year: "2000-2009", stage: "Development", description: "International chains enter. Tourism infrastructure expands." },
+            { year: "2009-Present", stage: "Consolidation", description: "Guesthouse tourism liberalized. 2.25M visitors annually across 183 resorts." }
+        ],
+        content: `
+            <h3>Paradise Scaled</h3>
+            <p>The Maldives presents a fascinating TALC case: a destination that reached Consolidation while maintaining its luxury positioning. With 2.25 million tourists in 2025 and 183 resorts offering 45,289 beds, the Maldives has achieved scale while preserving its premium brand.</p>
+
+            <h3>The Model</h3>
+            <ul>
+                <li><strong>"One island, one resort"</strong> model maintains exclusivity</li>
+                <li><strong>Guesthouse liberalization (2009)</strong> opened local islands to budget travelers</li>
+                <li>Tourism contributes <strong>~30% of GDP</strong></li>
+                <li>Environmental carrying capacity increasingly stressed</li>
+            </ul>
+
+            <h3>TALC Analysis</h3>
+            <p>The Maldives shows Consolidation characteristics: major chains dominate, growth rates have slowed, and environmental limits are evident. Yet unlike many Consolidation destinations, it hasn't experienced quality decline - the "one island, one resort" model prevents the kind of overdevelopment seen in beach destinations elsewhere.</p>
+
+            <h3>Climate Threat</h3>
+            <p>The elephant in the room: the Maldives averages just 1.5 meters above sea level. Climate change poses an existential threat that no amount of tourism management can address. This adds urgency to maximizing tourism benefits while the destination still exists.</p>
+
+            <h3>Lessons for TALC Theory</h3>
+            <p>The Maldives demonstrates that Consolidation doesn't necessarily mean decline in quality - it depends on the development model. The challenge is maintaining high-value tourism while expanding access.</p>
+        `,
+        mapCoords: [3.2028, 73.2207]
+    },
+    belize: {
+        title: "Belize's Diverse Journey",
+        subtitle: "One Country, Multiple TALC Stages",
+        stage: "Development",
+        timeline: [
+            { year: "1970s-1990s", stage: "Exploration", description: "Early ecotourism pioneers discover Belize. Diving and Mayan ruins attract adventurers." },
+            { year: "1990s-2010", stage: "Involvement", description: "Ambergris Caye develops. Local operators establish tour businesses." },
+            { year: "2010-2020", stage: "Development", description: "International investment accelerates. Cruise tourism grows." },
+            { year: "2020-Present", stage: "Mixed Stages", description: "Ambergris approaches Consolidation while Toledo remains Exploration." }
+        ],
+        content: `
+            <h3>A Country of Contrasts</h3>
+            <p>Belize offers a unique perspective on TALC theory: a single small country where different regions exist at dramatically different stages of the tourism lifecycle. This makes it an invaluable case study for understanding how development spreads and varies.</p>
+
+            <h3>Regional Stages</h3>
+            <ul>
+                <li><strong>Ambergris Caye:</strong> Consolidation - 70+ hotels, mostly foreign-owned, infrastructure strain</li>
+                <li><strong>Caye Caulker:</strong> Development - rapid growth while maintaining character</li>
+                <li><strong>Placencia:</strong> Development - major resort investment zone</li>
+                <li><strong>Hopkins:</strong> Involvement - community-based Garifuna tourism</li>
+                <li><strong>Toledo District:</strong> Exploration - pristine, minimal infrastructure</li>
+            </ul>
+
+            <h3>TALC Analysis</h3>
+            <p>Belize demonstrates that TALC stages can coexist within short distances. The $250M airport expansion and 46% GDP contribution from tourism indicate national-level Development, but the country contains the full spectrum from Exploration to approaching Consolidation.</p>
+
+            <h3>Challenges</h3>
+            <p>The contrast creates challenges: successful areas like Ambergris Caye face water and sanitation problems affecting the reef, while remote areas lack basic tourism infrastructure. Managing this uneven development is Belize's central tourism challenge.</p>
+
+            <h3>Lessons for TALC Theory</h3>
+            <p>Belize shows that TALC analysis must consider sub-national variations. Country-level assessments can mask important regional differences that affect both policy and investment decisions.</p>
+        `,
+        mapCoords: [17.1899, -88.4976]
+    },
+    rwanda: {
+        title: "Rwanda's High-Value Model",
+        subtitle: "$1,500 Gorilla Permits and Conservation Success",
+        stage: "Development",
+        timeline: [
+            { year: "Pre-1994", stage: "Exploration", description: "Early gorilla tourism established by Dian Fossey's work." },
+            { year: "1994-2000", stage: "Collapse", description: "Genocide devastates country and tourism industry." },
+            { year: "2000-2010", stage: "Rebuilding", description: "Deliberate high-value tourism strategy developed." },
+            { year: "2010-Present", stage: "Development", description: "Tourism becomes 2nd largest forex earner. Conservation success story." }
+        ],
+        content: `
+            <h3>A Different Model</h3>
+            <p>Rwanda represents a deliberate choice to pursue "high value, low volume" tourism from the start. Rather than maximizing visitor numbers, Rwanda has focused on maximizing revenue per visitor while minimizing environmental and social impact.</p>
+
+            <h3>The Strategy</h3>
+            <ul>
+                <li><strong>$1,500 gorilla trekking permits</strong> - among world's highest wildlife fees</li>
+                <li><strong>Limited daily permits</strong> - only 96 people can visit gorillas per day</li>
+                <li><strong>Revenue sharing</strong> - 10% of park fees go directly to local communities</li>
+                <li><strong>Conservation success</strong> - mountain gorilla population has grown from 620 to over 1,000</li>
+            </ul>
+
+            <h3>TALC Analysis</h3>
+            <p>Rwanda challenges traditional TALC thinking by showing that Development doesn't require mass tourism. The country has deliberately constrained supply to maintain premium positioning and environmental integrity.</p>
+
+            <h3>Beyond Gorillas</h3>
+            <p>Rwanda is diversifying: conference tourism in Kigali, chimp trekking in Nyungwe, and even positioning as a luxury African destination. Each segment follows the same high-value philosophy.</p>
+
+            <h3>Lessons for TALC Theory</h3>
+            <p>Rwanda demonstrates that Development stage can be managed to prevent progression toward Consolidation's problems. By controlling supply and maintaining high prices, Rwanda has created sustainable Development that could theoretically continue indefinitely.</p>
+        `,
+        mapCoords: [1.9403, 29.8739]
+    }
+};
+
+// Open case study modal
+function openCaseStudy(studyId) {
+    const study = caseStudies[studyId];
+    if (!study) return;
+
+    const modal = document.getElementById('caseStudyModal');
+    const body = document.getElementById('caseStudyBody');
+
+    const timelineHTML = study.timeline.map(t => `
+        <div class="timeline-item">
+            <div class="timeline-marker ${t.stage.toLowerCase()}"></div>
+            <div class="timeline-content">
+                <span class="timeline-year">${t.year}</span>
+                <span class="timeline-stage ${t.stage.toLowerCase()}">${t.stage}</span>
+                <p>${t.description}</p>
+            </div>
+        </div>
+    `).join('');
+
+    body.innerHTML = `
+        <div class="case-study-header">
+            <h2>${study.title}</h2>
+            <p class="case-study-subtitle">${study.subtitle}</p>
+            <span class="case-study-stage-badge ${study.stage.toLowerCase()}">${study.stage} Stage</span>
+        </div>
+
+        <div class="case-study-timeline">
+            <h3>TALC Timeline</h3>
+            <div class="timeline">
+                ${timelineHTML}
+            </div>
+        </div>
+
+        <div class="case-study-body">
+            ${study.content}
+        </div>
+
+        <div class="case-study-actions">
+            <button class="btn-view-map" onclick="viewOnMap(${study.mapCoords[0]}, ${study.mapCoords[1]}, '${studyId}')">
+                View on Map
+            </button>
+        </div>
+    `;
+
+    modal.classList.add('active');
+}
+
+// Close case study modal
+function closeCaseStudyModal() {
+    document.getElementById('caseStudyModal').classList.remove('active');
+}
+
+// View destination on map from case study
+function viewOnMap(lat, lng, studyId) {
+    closeCaseStudyModal();
+
+    // Scroll to map
+    document.getElementById('map-section').scrollIntoView({ behavior: 'smooth' });
+
+    // After scroll, zoom to location
+    setTimeout(() => {
+        map.setView([lat, lng], 6);
+    }, 500);
+}
+
+// Close case study modal on outside click
+document.addEventListener('click', function(e) {
+    const caseModal = document.getElementById('caseStudyModal');
+    if (e.target === caseModal) {
+        closeCaseStudyModal();
+    }
+});
