@@ -183,9 +183,12 @@
             <h2 class="section-title">Global TALC Destination Map</h2>
 
             <div class="map-controls">
-                <div class="control-group">
+                <div class="control-group search-group">
                     <label for="searchInput">Search Destination</label>
-                    <input type="text" id="searchInput" placeholder="Search by destination or country..." oninput="searchDestinations()">
+                    <div class="search-wrapper">
+                        <input type="text" id="searchInput" placeholder="Search by destination or country..." oninput="handleSearchInput()" autocomplete="off">
+                        <div id="autocompleteDropdown" class="autocomplete-dropdown hidden"></div>
+                    </div>
                 </div>
 
                 <div class="control-group">

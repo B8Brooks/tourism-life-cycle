@@ -22,6 +22,91 @@ const stageDescriptions = {
     rejuvenation: 'This destination is in the Rejuvenation stage - through significant changes, new attractions, or repositioning, the destination is experiencing renewed growth and sustainable development.'
 };
 
+// Stage characteristics for enhanced modal
+const stageCharacteristics = {
+    exploration: {
+        indicators: ['Few tourists', 'No dedicated infrastructure', 'High authenticity', 'Local culture intact'],
+        travelerTips: 'Expect basic facilities and limited tourist services. Ideal for adventurous travelers seeking authentic experiences.',
+        infrastructure: 'Minimal',
+        crowding: 'Very Low',
+        authenticity: 'Very High',
+        priceLevel: 'Variable'
+    },
+    involvement: {
+        indicators: ['Growing awareness', 'Local entrepreneurs emerging', 'Basic facilities', 'Tourism season forming'],
+        travelerTips: 'Good balance of authenticity and basic comfort. Local guides and family-run accommodations offer genuine experiences.',
+        infrastructure: 'Basic',
+        crowding: 'Low',
+        authenticity: 'High',
+        priceLevel: 'Budget-Moderate'
+    },
+    development: {
+        indicators: ['Rapid growth', 'External investment', 'New hotels/resorts', 'Infrastructure expansion'],
+        travelerTips: 'Visit soon to experience the destination before mass tourism fully develops. Good value with improving infrastructure.',
+        infrastructure: 'Developing',
+        crowding: 'Moderate',
+        authenticity: 'Moderate',
+        priceLevel: 'Moderate'
+    },
+    consolidation: {
+        indicators: ['Tourism-dependent economy', 'International chains', 'Well-developed infrastructure', 'Slowing growth'],
+        travelerTips: 'Established destination with reliable services. May feel touristy in popular areas. Look for local neighborhoods.',
+        infrastructure: 'Well-Developed',
+        crowding: 'High',
+        authenticity: 'Low-Moderate',
+        priceLevel: 'Moderate-High'
+    },
+    stagnation: {
+        indicators: ['Peak capacity reached', 'Environmental strain', 'Social tensions', 'Outdated facilities'],
+        travelerTips: 'May feel overcrowded. Consider shoulder seasons or lesser-known areas within the destination.',
+        infrastructure: 'Mature/Aging',
+        crowding: 'Very High',
+        authenticity: 'Low',
+        priceLevel: 'High'
+    },
+    decline: {
+        indicators: ['Falling visitor numbers', 'Facility closures', 'Economic challenges', 'Reputation issues'],
+        travelerTips: 'Can offer good value and fewer crowds. Some facilities may be closed or poorly maintained.',
+        infrastructure: 'Declining',
+        crowding: 'Decreasing',
+        authenticity: 'Variable',
+        priceLevel: 'Lower'
+    },
+    rejuvenation: {
+        indicators: ['New attractions', 'Rebranding efforts', 'Sustainable initiatives', 'Renewed investment'],
+        travelerTips: 'Exciting time to visit as destination reinvents itself. Often good value with new experiences emerging.',
+        infrastructure: 'Improving',
+        crowding: 'Moderate',
+        authenticity: 'Rebuilding',
+        priceLevel: 'Variable'
+    }
+};
+
+// Map destinations to related case studies
+const destinationCaseStudies = {
+    'albania': 'albania',
+    'tirana': 'albania',
+    'sarande': 'albania',
+    'ksamil': 'albania',
+    'berat': 'albania',
+    'gjirokaster': 'albania',
+    'venice': 'venice',
+    'iceland': 'iceland',
+    'reykjavik': 'iceland',
+    'blue lagoon': 'iceland',
+    'maldives': 'maldives',
+    'male': 'maldives',
+    'maafushi': 'maldives',
+    'belize': 'belize',
+    'ambergris caye': 'belize',
+    'caye caulker': 'belize',
+    'hopkins': 'belize',
+    'placencia': 'belize',
+    'rwanda': 'rwanda',
+    'kigali': 'rwanda',
+    'volcanoes national park': 'rwanda'
+};
+
 // Global variables
 let map;
 let allMarkers = [];
@@ -239,6 +324,115 @@ function searchDestinations() {
     applyFilters();
 }
 
+// ===== AUTOCOMPLETE FUNCTIONALITY =====
+
+// Handle search input with autocomplete
+function handleSearchInput() {
+    const input = document.getElementById('searchInput');
+    const dropdown = document.getElementById('autocompleteDropdown');
+    const query = input.value.toLowerCase().trim();
+
+    // Also filter the map
+    applyFilters();
+
+    // Show autocomplete if there's input
+    if (query.length < 2) {
+        dropdown.classList.add('hidden');
+        return;
+    }
+
+    // Find matching destinations
+    const matches = allDestinations
+        .filter(d =>
+            d.name.includes(query) ||
+            d.displayName.toLowerCase().includes(query) ||
+            d.country.includes(query) ||
+            d.displayCountry.toLowerCase().includes(query)
+        )
+        .slice(0, 8); // Limit to 8 suggestions
+
+    if (matches.length === 0) {
+        dropdown.classList.add('hidden');
+        return;
+    }
+
+    // Build dropdown HTML
+    dropdown.innerHTML = matches.map(d => `
+        <div class="autocomplete-item" onclick="selectAutocomplete('${d.displayName.replace(/'/g, "\\'")}', ${d.latitude}, ${d.longitude})">
+            <span class="autocomplete-name">${highlightMatch(d.displayName, query)}</span>
+            <span class="autocomplete-country">${d.displayCountry}</span>
+            <span class="autocomplete-phase ${d.phase}">${d.displayPhase}</span>
+        </div>
+    `).join('');
+
+    dropdown.classList.remove('hidden');
+}
+
+// Highlight matching text in autocomplete
+function highlightMatch(text, query) {
+    const regex = new RegExp(`(${query})`, 'gi');
+    return text.replace(regex, '<strong>$1</strong>');
+}
+
+// Select autocomplete suggestion
+function selectAutocomplete(name, lat, lng) {
+    const dropdown = document.getElementById('autocompleteDropdown');
+    const input = document.getElementById('searchInput');
+
+    input.value = name;
+    dropdown.classList.add('hidden');
+
+    // Zoom to destination and open popup
+    map.setView([lat, lng], 10);
+
+    // Find and open the marker popup
+    const dest = allDestinations.find(d => d.displayName === name);
+    if (dest) {
+        dest.marker.openPopup();
+    }
+
+    applyFilters();
+}
+
+// Close autocomplete when clicking outside
+document.addEventListener('click', function(e) {
+    const dropdown = document.getElementById('autocompleteDropdown');
+    const searchWrapper = document.querySelector('.search-wrapper');
+
+    if (dropdown && searchWrapper && !searchWrapper.contains(e.target)) {
+        dropdown.classList.add('hidden');
+    }
+});
+
+// Handle keyboard navigation in autocomplete
+document.addEventListener('keydown', function(e) {
+    const dropdown = document.getElementById('autocompleteDropdown');
+    if (!dropdown || dropdown.classList.contains('hidden')) return;
+
+    const items = dropdown.querySelectorAll('.autocomplete-item');
+    const active = dropdown.querySelector('.autocomplete-item.active');
+    let index = Array.from(items).indexOf(active);
+
+    if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        if (active) active.classList.remove('active');
+        index = (index + 1) % items.length;
+        items[index].classList.add('active');
+        items[index].scrollIntoView({ block: 'nearest' });
+    } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        if (active) active.classList.remove('active');
+        index = index <= 0 ? items.length - 1 : index - 1;
+        items[index].classList.add('active');
+        items[index].scrollIntoView({ block: 'nearest' });
+    } else if (e.key === 'Enter' && active) {
+        e.preventDefault();
+        active.click();
+    } else if (e.key === 'Escape') {
+        dropdown.classList.add('hidden');
+    }
+});
+
 // Filter by phase (calls unified filter)
 function filterByPhase() {
     applyFilters();
@@ -330,6 +524,58 @@ function showDestinationDetails(name, country, phase, lat, lng, type, parent, ju
     // Get similar destinations
     const similarSection = getSimilarDestinationsHTML(name, phase, country, type);
 
+    // Get stage characteristics
+    const characteristics = stageCharacteristics[phaseLower] || {};
+
+    // Build characteristics section
+    const characteristicsSection = characteristics.indicators ? `
+        <div class="modal-characteristics">
+            <h4>Stage Characteristics</h4>
+            <div class="characteristics-grid">
+                <div class="characteristic-item">
+                    <span class="char-label">Infrastructure</span>
+                    <span class="char-value">${characteristics.infrastructure || 'N/A'}</span>
+                </div>
+                <div class="characteristic-item">
+                    <span class="char-label">Crowding Level</span>
+                    <span class="char-value">${characteristics.crowding || 'N/A'}</span>
+                </div>
+                <div class="characteristic-item">
+                    <span class="char-label">Authenticity</span>
+                    <span class="char-value">${characteristics.authenticity || 'N/A'}</span>
+                </div>
+                <div class="characteristic-item">
+                    <span class="char-label">Price Level</span>
+                    <span class="char-value">${characteristics.priceLevel || 'N/A'}</span>
+                </div>
+            </div>
+            <div class="stage-indicators">
+                <strong>Key Indicators:</strong>
+                <ul>
+                    ${characteristics.indicators.map(ind => `<li>${ind}</li>`).join('')}
+                </ul>
+            </div>
+        </div>
+    ` : '';
+
+    // Build traveler tips section
+    const travelerTipsSection = characteristics.travelerTips ? `
+        <div class="modal-traveler-tips">
+            <h4>For Travelers</h4>
+            <p>${characteristics.travelerTips}</p>
+        </div>
+    ` : '';
+
+    // Check for related case study
+    const relatedCaseStudy = destinationCaseStudies[name.toLowerCase()];
+    const caseStudySection = relatedCaseStudy ? `
+        <div class="modal-case-study-link">
+            <button onclick="closeModal(); setTimeout(() => openCaseStudy('${relatedCaseStudy}'), 300);">
+                📖 Read ${caseStudies[relatedCaseStudy]?.title || 'Case Study'}
+            </button>
+        </div>
+    ` : '';
+
     modalBody.innerHTML = `
         <div class="modal-header">
             <h2>${name}</h2>
@@ -344,7 +590,10 @@ function showDestinationDetails(name, country, phase, lat, lng, type, parent, ju
             <span class="stage-badge ${phaseLower}">${phase} Stage</span>
             <p>${description}</p>
         </div>
+        ${characteristicsSection}
+        ${travelerTipsSection}
         ${justificationSection}
+        ${caseStudySection}
         ${childLocations}
         ${similarSection}
         <div class="modal-coordinates">
