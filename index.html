@@ -183,9 +183,12 @@
             <h2 class="section-title">Global TALC Destination Map</h2>
 
             <div class="map-controls">
-                <div class="control-group">
+                <div class="control-group search-group">
                     <label for="searchInput">Search Destination</label>
-                    <input type="text" id="searchInput" placeholder="Search by destination or country..." oninput="searchDestinations()">
+                    <div class="search-wrapper">
+                        <input type="text" id="searchInput" placeholder="Search by destination or country..." oninput="handleSearchInput()" autocomplete="off">
+                        <div id="autocompleteDropdown" class="autocomplete-dropdown hidden"></div>
+                    </div>
                 </div>
 
                 <div class="control-group">
@@ -214,6 +217,33 @@
                 <div class="control-group">
                     <button id="resetFilters" onclick="resetFilters()">Reset Filters</button>
                 </div>
+
+                <div class="control-group watch-list-btn">
+                    <button id="toggleWatchList" onclick="toggleWatchList()">
+                        <span class="watch-icon">&#9733;</span>
+                        Watch List (<span id="watchListCount">0</span>)
+                    </button>
+                </div>
+            </div>
+
+            <!-- Time Slider -->
+            <div class="time-slider-container">
+                <div class="time-slider-header">
+                    <h4>Historical Timeline</h4>
+                    <span class="time-slider-year" id="selectedYear">2024</span>
+                </div>
+                <div class="time-slider-track">
+                    <input type="range" id="timeSlider" min="1980" max="2024" value="2024" step="10" oninput="updateTimeSlider(this.value)">
+                    <div class="time-slider-labels">
+                        <span data-year="1980">1980</span>
+                        <span data-year="1990">1990</span>
+                        <span data-year="2000">2000</span>
+                        <span data-year="2010">2010</span>
+                        <span data-year="2020">2020</span>
+                        <span data-year="2024">Now</span>
+                    </div>
+                </div>
+                <p class="time-slider-info">Slide to see how destinations evolved through TALC stages over time</p>
             </div>
 
             <div class="map-container">
@@ -250,6 +280,20 @@
                             <span class="legend-color rejuvenation"></span>
                             <span>Rejuvenation</span>
                         </div>
+                    </div>
+                </div>
+
+                <!-- Watch List Panel -->
+                <div id="watchListPanel" class="watch-list-panel hidden">
+                    <div class="watch-list-header">
+                        <h4>&#9733; Your Watch List</h4>
+                        <button class="close-watch-list" onclick="toggleWatchList()">&times;</button>
+                    </div>
+                    <div class="watch-list-content" id="watchListContent">
+                        <p class="watch-list-empty">No destinations in your watch list yet. Click the star icon on any destination to add it.</p>
+                    </div>
+                    <div class="watch-list-footer">
+                        <button onclick="clearWatchList()" class="clear-watch-list">Clear All</button>
                     </div>
                 </div>
             </div>
@@ -296,6 +340,104 @@
             </div>
         </div>
     </section>
+
+    <!-- Case Studies Section -->
+    <section id="case-studies" class="case-studies-section">
+        <div class="container">
+            <h2 class="section-title">TALC Case Studies</h2>
+            <p class="section-subtitle">Real-world examples of destinations at different stages of the Tourism Area Life Cycle</p>
+
+            <div class="case-studies-grid">
+                <!-- Albania - Rapid Development -->
+                <div class="case-study-card" onclick="openCaseStudy('albania')">
+                    <div class="case-study-image albania-bg">
+                        <span class="case-study-stage development">Development</span>
+                    </div>
+                    <div class="case-study-content">
+                        <h3>Albania's Tourism Boom</h3>
+                        <p class="case-study-subtitle">From Hidden Gem to Europe's Hottest Destination</p>
+                        <p class="case-study-preview">With 11.7M visitors in 2024 and 80% growth vs 2019, Albania exemplifies rapid Development stage progression...</p>
+                        <span class="read-more">Read Full Case Study &rarr;</span>
+                    </div>
+                </div>
+
+                <!-- Venice - Decline -->
+                <div class="case-study-card" onclick="openCaseStudy('venice')">
+                    <div class="case-study-image venice-bg">
+                        <span class="case-study-stage decline">Decline</span>
+                    </div>
+                    <div class="case-study-content">
+                        <h3>Venice's Overtourism Crisis</h3>
+                        <p class="case-study-subtitle">When Tourism Destroys What It Loves</p>
+                        <p class="case-study-preview">Venice's population has dropped from 175,000 to under 50,000 as tourism transformed the city into a theme park...</p>
+                        <span class="read-more">Read Full Case Study &rarr;</span>
+                    </div>
+                </div>
+
+                <!-- Iceland - Development with Pressures -->
+                <div class="case-study-card" onclick="openCaseStudy('iceland')">
+                    <div class="case-study-image iceland-bg">
+                        <span class="case-study-stage development">Development</span>
+                    </div>
+                    <div class="case-study-content">
+                        <h3>Iceland's Sustainable Approach</h3>
+                        <p class="case-study-subtitle">Managing Growth Before It's Too Late</p>
+                        <p class="case-study-preview">With 2.3M visitors (6x the population), Iceland is pioneering surge pricing and conservation fees to manage tourism...</p>
+                        <span class="read-more">Read Full Case Study &rarr;</span>
+                    </div>
+                </div>
+
+                <!-- Maldives - Consolidation -->
+                <div class="case-study-card" onclick="openCaseStudy('maldives')">
+                    <div class="case-study-image maldives-bg">
+                        <span class="case-study-stage consolidation">Consolidation</span>
+                    </div>
+                    <div class="case-study-content">
+                        <h3>Maldives: Luxury at Scale</h3>
+                        <p class="case-study-subtitle">High-Value Tourism Meets Environmental Limits</p>
+                        <p class="case-study-preview">183 luxury resorts welcoming 2.25M tourists annually, the Maldives shows both the success and strain of Consolidation...</p>
+                        <span class="read-more">Read Full Case Study &rarr;</span>
+                    </div>
+                </div>
+
+                <!-- Belize - Mixed Development -->
+                <div class="case-study-card" onclick="openCaseStudy('belize')">
+                    <div class="case-study-image belize-bg">
+                        <span class="case-study-stage development">Development</span>
+                    </div>
+                    <div class="case-study-content">
+                        <h3>Belize's Diverse Journey</h3>
+                        <p class="case-study-subtitle">One Country, Multiple TALC Stages</p>
+                        <p class="case-study-preview">From developed Ambergris Caye to pristine Toledo District, Belize demonstrates how regions within one country can exist at different stages...</p>
+                        <span class="read-more">Read Full Case Study &rarr;</span>
+                    </div>
+                </div>
+
+                <!-- Rwanda - Sustainable Development -->
+                <div class="case-study-card" onclick="openCaseStudy('rwanda')">
+                    <div class="case-study-image rwanda-bg">
+                        <span class="case-study-stage development">Development</span>
+                    </div>
+                    <div class="case-study-content">
+                        <h3>Rwanda's High-Value Model</h3>
+                        <p class="case-study-subtitle">$1,500 Gorilla Permits and Conservation Success</p>
+                        <p class="case-study-preview">Rwanda's deliberate "high value, low volume" strategy shows how Development can be managed sustainably from the start...</p>
+                        <span class="read-more">Read Full Case Study &rarr;</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Study Modal -->
+    <div id="caseStudyModal" class="modal case-study-modal">
+        <div class="modal-content case-study-modal-content">
+            <span class="close-modal" onclick="closeCaseStudyModal()">&times;</span>
+            <div id="caseStudyBody">
+                <!-- Populated dynamically -->
+            </div>
+        </div>
+    </div>
 
     <!-- Destination Details Modal -->
     <div id="destinationModal" class="modal">
